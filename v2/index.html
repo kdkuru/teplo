@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТеплоСервис — котельные и инженерные системы под ключ в Самаре</title>
+<meta name="description" content="Проектирование, монтаж и техническое перевооружение котельных в Самаре. Госэкспертиза, согласования и ввод в эксплуатацию — берём на себя. 11 лет, объекты до 25 МВт.">
+<meta name="theme-color" content="#131417">
+<meta property="og:title" content="ТеплоСервис — котельные и инженерные системы под ключ">
+<meta property="og:description" content="От проекта и госэкспертизы до монтажа и ввода в эксплуатацию. Самара и Самарская область, объекты до 25 МВт.">
+<meta property="og:image" content="assets/logo-192.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://xn--63-dlclatsyhnjed.xn--p1ai/">
+<link rel="icon" href="assets/logo-192.png">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+:root{
+  /* светлые поверхности — тёплая бумага, тёмные — сталь */
+  --paper:#f6f5f2; --card:#ffffff; --raised:#efeeea;
+  --ink:#1d1c1a; --ink-2:#57544e; --ink-3:#7d7971;
+  --line:rgba(29,28,26,.14); --line-soft:rgba(29,28,26,.08);
+  --coal-0:#131417; --coal-1:#1b1d21; --coal-2:#24272d;
+  --wtext:#ececea; --wtext-2:#a6a8ad; --wtext-3:#83868d;
+  --wline:rgba(236,236,234,.12); --wline-soft:rgba(236,236,234,.07);
+  --red:#c6221d; --red-deep:#a91a15;
+  --r-card:14px; --r-ctl:10px; --r-tag:6px;
+  --sans:'IBM Plex Sans',system-ui,Arial,sans-serif;
+  --mono:'IBM Plex Mono',Consolas,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec{padding:clamp(72px,9vw,120px) 0}
+section[id]{scroll-margin-top:72px}
+h1,h2{text-wrap:balance}
+/* подпись раздела — моно-метка как в проектной документации */
+.kicker{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:400;font-size:12.5px;letter-spacing:.04em;color:var(--ink-3);margin-bottom:16px}
+.kicker::before{content:"";width:16px;height:2px;background:var(--red);flex:none}
+.sec h2{font-size:clamp(24px,3vw,34px);font-weight:500;line-height:1.15;letter-spacing:-.01em}
+.sec .lead{font-size:16px;color:var(--ink-2);max-width:640px;margin-top:12px}
+.sec-head{max-width:720px;margin:0 auto 48px}
+/* кнопки */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:15px;padding:0 20px;height:48px;border-radius:var(--r-ctl);border:1px solid transparent;cursor:pointer;transition:background .14s var(--ease),border-color .14s var(--ease),color .14s var(--ease),transform .1s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-ghost{background:transparent;color:var(--wtext);border-color:var(--wline)}
+.btn-ghost:hover{border-color:var(--wtext-3);background:var(--coal-1)}
+.btn-card{background:var(--card);color:var(--ink);border-color:var(--line)}
+.btn-card:hover{background:var(--raised)}
+/* шапка */
+header{position:sticky;top:0;z-index:50;background:var(--coal-0);border-bottom:1px solid var(--wline-soft)}
+.hd{display:flex;align-items:center;gap:24px;height:64px}
+.hd-logo{display:flex;align-items:center;gap:12px;min-width:0}
+.hd-logo img{width:38px;height:38px;flex:none}
+.hd-name{font-weight:600;color:var(--wtext);font-size:16px;letter-spacing:.01em;white-space:nowrap}
+.hd-name small{display:block;font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.22em;color:var(--wtext-3)}
+nav.hd-nav{margin-left:auto;display:flex;gap:24px}
+nav.hd-nav a{color:var(--wtext-2);font-size:14px}
+nav.hd-nav a:hover{color:var(--wtext)}
+.hd-phone{font-family:var(--mono);font-size:14px;color:var(--wtext);white-space:nowrap}
+.hd-phone:hover{color:var(--wtext-2)}
+.hd-cta{height:40px;padding:0 16px;font-size:14px}
+.burger{display:none;width:44px;height:44px;margin-left:auto;border:1px solid var(--wline);border-radius:var(--r-ctl);background:transparent;color:var(--wtext);cursor:pointer;align-items:center;justify-content:center}
+.burger svg{width:20px;height:20px}
+.m-menu{display:none;position:absolute;left:0;right:0;top:64px;background:var(--coal-0);border-bottom:1px solid var(--wline);padding:8px 24px 20px}
+.m-menu.on{display:block}
+.m-menu a{display:block;padding:12px 0;color:var(--wtext-2);font-size:15px;border-bottom:1px solid var(--wline-soft)}
+.m-menu a:hover{color:var(--wtext)}
+.m-menu .m-call{font-family:var(--mono);color:var(--wtext)}
+@media(max-width:960px){nav.hd-nav,.hd-cta,.hd-phone{display:none}.burger{display:inline-flex}}
+@media(max-width:600px){.hd{height:60px;gap:12px}.m-menu{top:60px}.hd-logo img{width:32px;height:32px}.hd-name{font-size:14px}}
+/* hero */
+.hero{background:var(--coal-0);color:var(--wtext)}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:clamp(56px,7vw,104px) 0 64px}
+.hero .kicker{color:var(--wtext-3)}
+.hero h1{font-size:clamp(30px,4.2vw,52px);font-weight:500;line-height:1.08;letter-spacing:-.02em}
+.hero .sub{margin-top:20px;font-size:17px;color:var(--wtext-2);max-width:480px}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-video{position:relative;border-radius:var(--r-card);overflow:hidden;border:1px solid var(--wline)}
+.hero-video video{width:100%;aspect-ratio:16/10.5;object-fit:cover;display:block}
+.sound-toggle{position:absolute;right:12px;bottom:12px;width:44px;height:44px;border-radius:50%;border:1px solid var(--wline);background:var(--coal-1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .14s var(--ease)}
+.sound-toggle:hover{background:var(--coal-2)}
+.sound-toggle svg{width:20px;height:20px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--wline);padding:24px 0 48px}
+.hstat{padding:0 24px;border-left:1px solid var(--wline)}
+.hstat:first-child{border-left:none;padding-left:0}
+.hstat b{display:block;font-family:var(--mono);font-weight:500;font-size:24px;line-height:1.2;color:var(--wtext);white-space:nowrap;font-variant-numeric:tabular-nums}
+.hstat span{font-size:12.5px;color:var(--wtext-3);display:block;margin-top:4px}
+@media(max-width:960px){.hero-in{grid-template-columns:1fr;gap:36px;padding:48px 0 40px}.hero-video{order:-1}.hero-stats{grid-template-columns:repeat(2,1fr);row-gap:20px;padding-bottom:40px}.hstat:nth-child(3){border-left:none;padding-left:0}}
+@media(max-width:420px){.hstat{padding:0 16px}.hstat b{font-size:20px}.hstat span{font-size:11.5px}}
+/* сертификат */
+.cert-in{display:grid;grid-template-columns:1fr 440px;gap:56px;align-items:center}
+.cert-img{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);cursor:zoom-in}
+.cert-img img{border-radius:8px}
+.cert p{margin-top:14px;font-size:16px;color:var(--ink-2);max-width:520px}
+@media(max-width:960px){.cert-in{grid-template-columns:1fr;gap:32px}.cert-img{max-width:440px}}
+/* что берём на себя */
+.pr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.pr-card{padding:24px 24px 8px 0;border-bottom:1px solid var(--line-soft)}
+.pr-card:not(:first-child){padding-left:24px;border-left:1px solid var(--line-soft)}
+.pr-card .n{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:block;margin-bottom:12px}
+.pr-card b{font-size:16px;font-weight:600;display:block;margin-bottom:8px}
+.pr-card p{font-size:14px;color:var(--ink-2)}
+@media(max-width:960px){.pr-grid{grid-template-columns:repeat(2,1fr)}.pr-card:nth-child(3){padding-left:0;border-left:none}.pr-card{padding-bottom:24px}}
+@media(max-width:560px){.pr-grid{grid-template-columns:1fr}.pr-card{padding-left:0!important;border-left:none!important}}
+/* услуги */
+.sv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sv-card{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-card);padding:24px;transition:border-color .14s var(--ease)}
+.sv-card:hover{border-color:var(--line)}
+.sv-card .ic{height:20px;margin-bottom:16px;color:var(--ink-3)}
+.sv-card .ic svg{width:20px;height:20px}
+.sv-card h3{font-size:16px;font-weight:600;margin-bottom:10px}
+.sv-card p{font-size:14px;color:var(--ink-2)}
+.sv-card .more{display:block;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+@media(max-width:960px){.sv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.sv-grid{grid-template-columns:1fr}}
+/* объекты */
+.projects{background:var(--coal-0);color:var(--wtext)}
+.projects .kicker{color:var(--wtext-3)}
+.projects .lead{color:var(--wtext-2)}
+.pj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pj{position:relative;border-radius:var(--r-card);overflow:hidden;min-height:250px;display:flex;align-items:flex-end;background:var(--coal-1);border:1px solid var(--wline-soft);cursor:zoom-in}
+.pj img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s var(--ease)}
+.pj:hover img{opacity:.82}
+.pj .ov{position:relative;z-index:2;width:100%;padding:72px 18px 16px;background:linear-gradient(transparent,rgba(12,13,15,.88) 55%)}
+.pj b{font-size:15px;font-weight:600;display:block;line-height:1.35}
+.pj .ov span{font-family:var(--mono);font-size:12px;color:var(--wtext-2);margin-top:4px;display:block}
+.pj .mw{position:absolute;top:12px;left:12px;z-index:3;font-family:var(--mono);font-size:12px;color:var(--wtext);background:rgba(19,20,23,.72);border:1px solid var(--wline);border-radius:var(--r-tag);padding:4px 10px;font-variant-numeric:tabular-nums}
+.pj-zoom{position:absolute;top:12px;right:12px;z-index:3;width:36px;height:36px;border-radius:50%;background:rgba(19,20,23,.72);border:1px solid var(--wline);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .14s var(--ease)}
+.pj:hover .pj-zoom,.tm:hover .tm-zoom{opacity:1}
+.pj-zoom svg,.tm-zoom svg{width:16px;height:16px;color:var(--wtext)}
+.pj-quote{margin-top:40px;text-align:center;font-size:17px;color:var(--wtext-2)}
+.pj-quote em{font-style:normal;color:var(--wtext)}
+@media(max-width:960px){.pj-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pj-grid{grid-template-columns:1fr}}
+@media(hover:none){.pj-zoom{opacity:1}.tm-zoom{opacity:1}}
+/* порядок работ */
+.st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.st{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-card);padding:24px}
+.st .n{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:block;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.st b{font-size:16px;font-weight:600;display:block;margin-bottom:8px}
+.st p{font-size:14px;color:var(--ink-2)}
+@media(max-width:960px){.st-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.st-grid{grid-template-columns:1fr}}
+/* квиз */
+.quiz-wrap{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-card);padding:32px;max-width:760px;margin:0 auto}
+.q-step{display:none}
+.q-step.on{display:block}
+.q-meta{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:block;margin-bottom:12px}
+.q-q{font-size:19px;font-weight:600;margin-bottom:20px}
+.q-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.q-opt{border:1px solid var(--line);border-radius:var(--r-ctl);padding:13px 16px;cursor:pointer;font-size:15px;font-weight:400;background:var(--card);color:var(--ink);text-align:left;transition:border-color .14s var(--ease),background .14s var(--ease)}
+.q-opt:hover{background:var(--raised)}
+.q-opt.sel{border-color:var(--red);background:#faf1f0;box-shadow:inset 0 0 0 1px var(--red)}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:12px;flex-wrap:wrap}
+.q-progress{flex:1;height:2px;border-radius:1px;background:var(--line-soft);min-width:120px;overflow:hidden}
+.q-progress i{display:block;height:100%;width:25%;background:var(--red);transition:width .3s var(--ease)}
+.q-inputs{display:grid;gap:10px;max-width:420px}
+.q-inputs input{background:var(--card);border:1px solid var(--line);border-radius:var(--r-ctl);padding:13px 16px;color:var(--ink);font-size:15px;font-family:var(--sans)}
+.q-inputs input::placeholder{color:var(--ink-3)}
+.q-note{font-size:14px;color:var(--ink-2);margin-top:16px}
+.q-result{display:none}
+.q-result.on{display:block}
+.q-sum{background:var(--raised);border:1px solid var(--line-soft);border-radius:var(--r-ctl);padding:18px;font-family:var(--mono);font-size:13px;line-height:1.7;white-space:pre-line;color:var(--ink-2)}
+.q-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.quiz-phone{margin-top:14px;font-size:14px;color:var(--ink-2)}
+.quiz-phone a{font-family:var(--mono);color:var(--red)}
+.quiz-phone a:hover{text-decoration:underline}
+@media(max-width:560px){.q-opts{grid-template-columns:1fr}.quiz-wrap{padding:24px 18px}}
+/* честные ответы */
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.faq-card{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-card);padding:24px}
+.faq-card b{font-size:16px;font-weight:600;line-height:1.4;display:block}
+.faq-card p{font-size:14px;color:var(--ink-2);margin-top:10px}
+.faq-card .cite{margin-top:14px;font-size:13.5px;color:var(--ink-2);border-left:2px solid var(--red);padding-left:12px}
+.faq-card .cite small{display:block;font-family:var(--mono);color:var(--ink-3);margin-top:4px;font-size:11.5px}
+@media(max-width:760px){.faq-grid{grid-template-columns:1fr}}
+/* отзывы */
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column}
+.rv .stars{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:2px}
+.rv p{font-size:14.5px;margin-top:12px;flex:1}
+.rv .who{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:13px;font-weight:600}
+.rv .who small{display:block;font-family:var(--mono);font-weight:400;color:var(--ink-3);font-size:11.5px;margin-top:2px}
+.rv-cta{text-align:center;margin-top:28px;font-size:14px;color:var(--ink-2)}
+.rv-cta a{color:var(--red);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:960px){.rv-grid{grid-template-columns:1fr}}
+/* стоимость */
+.price-rows{max-width:760px;margin:0 auto}
+.prow{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.prow b{font-size:15.5px;font-weight:600}
+.prow .dots{flex:1;min-width:32px;border-bottom:1px dotted rgba(29,28,26,.3);transform:translateY(-4px)}
+.prow .val{font-family:var(--mono);font-size:13px;color:var(--ink-2);white-space:nowrap}
+.prow small{width:100%;font-size:13.5px;color:var(--ink-3)}
+/* команда */
+.team{background:var(--coal-0);color:var(--wtext)}
+.team .kicker{color:var(--wtext-3)}
+.team .lead{color:var(--wtext-2)}
+.tm-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.tm{position:relative;background:var(--coal-1);border-radius:var(--r-card);overflow:hidden;border:1px solid var(--wline-soft);cursor:zoom-in}
+.tm img{width:100%;aspect-ratio:603/695;object-fit:cover}
+.tm .nm{padding:12px}
+.tm b{font-size:13px;font-weight:600;display:block;line-height:1.35}
+.tm span{font-family:var(--mono);font-size:11.5px;color:var(--wtext-3);margin-top:4px;display:block}
+.tm-zoom{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(19,20,23,.72);border:1px solid var(--wline);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .14s var(--ease)}
+.family{margin-top:16px;display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:stretch}
+.fam-note,.fam-finst{background:var(--coal-1);border:1px solid var(--wline-soft);border-radius:var(--r-card);padding:24px}
+.fam-note{border-left:2px solid var(--red)}
+.fam-note b,.fam-finst b{font-size:16px;font-weight:600;display:block;margin-bottom:10px}
+.fam-note p,.fam-finst p{font-size:14px;color:var(--wtext-2)}
+@media(max-width:960px){.tm-grid{grid-template-columns:repeat(4,1fr)}.family{grid-template-columns:1fr}}
+@media(max-width:560px){.tm-grid{grid-template-columns:repeat(2,1fr)}}
+/* клиенты и письма */
+.mq{overflow:hidden;margin-bottom:40px;position:relative}
+.mq::before,.mq::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.mq::before{left:0;background:linear-gradient(90deg,var(--paper),transparent)}
+.mq::after{right:0;background:linear-gradient(-90deg,var(--paper),transparent)}
+.mq-track{display:flex;align-items:center;gap:48px;width:max-content;animation:mq 44s linear infinite}
+.mq:hover .mq-track{animation-play-state:paused}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-track img{height:60px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.55;mix-blend-mode:multiply;transition:filter .2s,opacity .2s}
+.mq-track img:hover{filter:grayscale(0);opacity:1}
+.lt-tabs{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:start}
+.lt-quote{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-card);padding:28px}
+.lt-quote p{font-size:15px;line-height:1.7;min-height:168px;color:var(--ink)}
+.lt-quote .who{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:14px;font-weight:600}
+.lt-quote .who span{display:block;font-family:var(--mono);font-weight:400;color:var(--ink-3);font-size:12px;margin-top:3px}
+.lt-nav{display:grid;gap:8px}
+.lt-nav button{text-align:left;font-size:13.5px;font-weight:500;line-height:1.4;padding:13px 16px;border:1px solid var(--line-soft);border-left:2px solid var(--line-soft);border-radius:var(--r-ctl);background:var(--card);cursor:pointer;transition:border-color .14s var(--ease),background .14s var(--ease);color:var(--ink-2)}
+.lt-nav button:hover{border-color:var(--line);background:var(--raised)}
+.lt-nav button.on{border-color:var(--line);border-left-color:var(--red);background:var(--card);color:var(--ink)}
+@media(max-width:760px){.lt-tabs{grid-template-columns:1fr}.mq-track{gap:32px}.mq-track img{height:48px}}
+/* контакты */
+.contact{background:var(--coal-0);color:var(--wtext)}
+.contact .kicker{color:var(--wtext-3)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.ct-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--wline-soft)}
+.ct-item .ic{color:var(--wtext-3);flex:none;height:22px;padding-top:2px}
+.ct-item .ic svg{width:20px;height:20px}
+.ct-item b{font-size:14px;font-weight:600;display:block;color:var(--wtext)}
+.ct-item a,.ct-item span.v{font-size:14.5px;color:var(--wtext-2)}
+.ct-item a:hover{color:var(--wtext)}
+.lead-form{margin-top:20px;background:var(--coal-1);border:1px solid var(--wline-soft);border-radius:var(--r-card);padding:24px;display:grid;gap:10px}
+.lead-form .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lead-form input,.lead-form select,.lead-form textarea{width:100%;background:var(--coal-2);border:1px solid var(--wline);border-radius:var(--r-ctl);padding:13px 15px;color:var(--wtext);font-size:14.5px;font-family:var(--sans)}
+.lead-form select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23a6a8ad' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.lead-form select option{color:var(--ink);background:#fff}
+.lead-form textarea{min-height:88px;resize:vertical}
+.lead-form input::placeholder,.lead-form textarea::placeholder{color:var(--wtext-3)}
+.lead-form label.consent{display:flex;gap:10px;font-family:var(--mono);font-size:12px;color:var(--wtext-3);align-items:flex-start;cursor:pointer;margin-top:2px}
+.lead-form label.consent input{width:16px;height:16px;margin-top:2px;accent-color:var(--red);flex:none}
+.lead-form .btn{justify-content:center;margin-top:4px}
+.map-box{border-radius:var(--r-card);overflow:hidden;border:1px solid var(--wline-soft);min-height:520px;position:relative}
+.map-box iframe{width:100%;height:100%;min-height:520px;border:0;display:block}
+@media(max-width:820px){.ct-grid{grid-template-columns:1fr}.lead-form .row2{grid-template-columns:1fr}.map-box{min-height:340px}.map-box iframe{min-height:340px}}
+/* футер */
+footer{background:#0e0f12;color:var(--wtext-3);padding:32px 0}
+.ft{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.ft img{width:32px;height:32px}
+.ft b{color:var(--wtext);font-weight:600;font-size:15px}
+.ft-nav{margin-left:auto;display:flex;gap:20px;font-size:13px;flex-wrap:wrap}
+.ft-nav a:hover{color:var(--wtext)}
+.ft-bottom{margin-top:20px;padding-top:16px;border-top:1px solid var(--wline-soft);font-family:var(--mono);font-size:12px;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+/* мобильная панель звонка */
+.callbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px}
+.callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border-radius:var(--r-ctl);font-size:14px;font-weight:500}
+.callbar .c1{background:var(--red);color:#fff}
+.callbar .c1:hover{background:var(--red-deep)}
+.callbar .c2{background:var(--coal-1);color:var(--wtext);border:1px solid var(--wline)}
+.callbar svg{width:17px;height:17px}
+@media(max-width:600px){.callbar{display:flex}body{padding-bottom:76px}}
+.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--coal-2);color:var(--wtext);border:1px solid var(--wline);border-radius:var(--r-ctl);padding:12px 18px;font-size:14px;z-index:99;opacity:0;pointer-events:none;transition:opacity .25s var(--ease);max-width:88vw;text-align:center}
+.toast.on{opacity:1}
+/* лайтбокс */
+[data-lb],.pj,.tm{cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(10,11,13,.95);display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.on{display:flex}
+.lightbox figure{max-width:min(1100px,92vw);margin:0;text-align:center}
+.lightbox img{max-width:100%;max-height:82vh;border-radius:10px}
+.lightbox figcaption{margin-top:12px;font-family:var(--mono);font-size:13px;color:var(--wtext-2)}
+.lb-btn{position:absolute;width:44px;height:44px;border-radius:50%;border:1px solid var(--wline);background:var(--coal-1);color:var(--wtext);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .14s var(--ease)}
+.lb-btn:hover{background:var(--coal-2)}
+.lb-btn svg{width:20px;height:20px}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:18px;top:50%;transform:translateY(-50%)}
+.lb-next{right:18px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12.5px;color:var(--wtext-2);background:var(--coal-1);border:1px solid var(--wline);border-radius:999px;padding:6px 16px}
+@media(max-width:560px){.lb-prev{left:8px}.lb-next{right:8px}.lightbox{padding:12px}}
+/* движение: меньше и спокойнее */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .mq-track{animation:none}
+  .mq{overflow-x:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header>
+  <div class="container hd">
+    <a class="hd-logo" href="#top" aria-label="ТеплоСервис — на главную">
+      <img src="assets/logo-192.png" alt="Логотип ТеплоСервис">
+      <span class="hd-name">ТеплоСервис<small>САМАРА</small></span>
+    </a>
+    <nav class="hd-nav" aria-label="Основное меню">
+      <a href="#services">Услуги</a>
+      <a href="#projects">Объекты</a>
+      <a href="#quiz">Расчёт</a>
+      <a href="#team">Компания</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="hd-phone" href="tel:+78462012576">8 (846) 201-25-76</a>
+    <a class="btn btn-red hd-cta" href="#quiz">Рассчитать проект</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="m-menu" id="mMenu">
+      <a href="#services">Услуги</a>
+      <a href="#projects">Объекты</a>
+      <a href="#quiz">Расчёт</a>
+      <a href="#team">Компания</a>
+      <a href="#contact">Контакты</a>
+      <a class="m-call" href="tel:+78462012576">8 (846) 201-25-76</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container hero-in">
+    <div>
+      <span class="kicker">Самара и Самарская область · с 2014 года</span>
+      <h1>Котельные и инженерные системы под&nbsp;ключ</h1>
+      <p class="sub">От проекта и госэкспертизы до монтажа и ввода в эксплуатацию. Согласования и инстанции берём на себя — свои проектировщики и монтажная бригада.</p>
+      <div class="hero-cta">
+        <a class="btn btn-red" href="#quiz">Рассчитать проект</a>
+        <a class="btn btn-ghost" href="tel:+78462012576">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          8 (846) 201-25-76
+        </a>
+      </div>
+    </div>
+    <div class="hero-video">
+      <video id="heroVideo" src="assets/video-hero-sound.mp4" autoplay muted loop playsinline></video>
+      <button class="sound-toggle" id="soundToggle" aria-label="Включить звук видео">
+        <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+        <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="container hero-stats">
+    <div class="hstat"><b>11 лет</b><span>на рынке</span></div>
+    <div class="hstat"><b>20+</b><span>объектов сдано</span></div>
+    <div class="hstat"><b>до 25 МВт</b><span>мощность котельных</span></div>
+    <div class="hstat"><b>17</b><span>специалистов в штате</span></div>
+  </div>
+</section>
+
+<!-- 01 СЕРТИФИКАТ -->
+<section class="sec cert">
+  <div class="container cert-in">
+    <div>
+      <span class="kicker">01 · Награда</span>
+      <h2>«Лучшее предприятие отрасли — 2025»</h2>
+      <p>Отраслевая награда ООО «ТеплоСервис». Доверие подкрепляют благодарственные письма АО «Тяжмаш», АО «УФСИН по Самарской области», ПАО «Самаранефтегеофизика» и других заказчиков — все письма показываем ниже.</p>
+    </div>
+    <div class="cert-img"><img src="assets/sert.jpg" alt="Сертификат «Лучшее предприятие отрасли 2025» — ТеплоСервис" data-lb="assets/sert.jpg" data-lb-title="Сертификат «Лучшее предприятие отрасли 2025» — ООО «ТеплоСервис»"></div>
+  </div>
+</section>
+
+<!-- 02 ЧТО БЕРЁМ НА СЕБЯ -->
+<section class="sec promises" style="padding-top:0">
+  <div class="container">
+    <span class="kicker">02 · Подход</span>
+    <h2 style="max-width:640px">Что мы берём на себя</h2>
+    <p class="lead" style="margin-bottom:48px">Проект, экспертиза, согласования, монтаж и сдача — всё это наша работа, а не ваша головная боль.</p>
+    <div class="pr-grid">
+      <div class="pr-card">
+        <span class="n">01</span>
+        <b>Проект</b>
+        <p>Проектная документация любой сложности — от частного дома до промышленного объекта.</p>
+      </div>
+      <div class="pr-card">
+        <span class="n">02</span>
+        <b>Госэкспертиза</b>
+        <p>Проходим экспертизу и согласования с Ростехнадзором сами, без ваших поездок.</p>
+      </div>
+      <div class="pr-card">
+        <span class="n">03</span>
+        <b>Монтаж и наладка</b>
+        <p>Строительство, пусконаладка и режимная наладка — своя строительно-монтажная бригада.</p>
+      </div>
+      <div class="pr-card">
+        <span class="n">04</span>
+        <b>Сдача объекта</b>
+        <p>Ввод в эксплуатацию и исполнительная документация — объект сдаётся «под ключ».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 УСЛУГИ -->
+<section class="sec" id="services" style="background:var(--raised)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">03 · Услуги</span>
+      <h2>Шесть направлений — одна компания</h2>
+      <p class="lead">Не передаём между подрядчиками: проектирование, монтаж, автоматика и сдача — внутри одной команды.</p>
+    </div>
+    <div class="sv-grid">
+      <div class="sv-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21h20M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg></div>
+        <h3>Проектно-изыскательские работы</h3>
+        <p>Сбор данных по зданию, эскизный проект, проектная документация и спецификации, согласование. От индивидуальных построек до промышленных объектов.</p>
+        <span class="more">от частного дома до промышленности</span>
+      </div>
+      <div class="sv-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 11h4M6 13h4M15 11h.01M17 13h.01"/></svg></div>
+        <h3>Автоматизация котельных</h3>
+        <p>Автоматизация котельных и тепловых пунктов: контроль параметров, сигнализация, автоматические защиты и блокировки, дистанционное управление.</p>
+        <span class="more">котельные и тепловые пункты</span>
+      </div>
+      <div class="sv-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-3 8-6.5 8-11a8 8 0 1 0-16 0c0 4.5 4 8 8 11z"/><path d="M12 8v5M9.5 10.5h5"/></svg></div>
+        <h3>Системы газоснабжения</h3>
+        <p>Строительство, техперевооружение и реконструкция газопроводов; ГРП и ГРУ; узлы учёта газа; монтаж теплогенераторов. Пуск, режимная наладка, ввод.</p>
+        <span class="more">давление низкое / среднее / высокое</span>
+      </div>
+      <div class="sv-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></svg></div>
+        <h3>Системы теплоснабжения</h3>
+        <p>Отопление, вентиляция, кондиционирование, ГВС; теплоизоляция; гидравлические испытания сетей; узлы учёта тепла.</p>
+        <span class="more">внутренние и наружные сети</span>
+      </div>
+      <div class="sv-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M4 4l16 16M20 4l-6 6"/><path d="M14 4h6v6"/></svg></div>
+        <h3>Инженерные расчёты</h3>
+        <p>Гидравлический расчёт инженерных сетей, расчёт электрических нагрузок и системы заземления.</p>
+        <span class="more">для проектов любой сложности</span>
+      </div>
+      <div class="sv-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8M12 2v6"/><path d="M6 22h12M8 8h8l-1 12H9L8 8z"/></svg></div>
+        <h3>Изготовление</h3>
+        <p>Мачты для дымовых труб, утеплённые сэндвич-трубы — собственное изготовление под объект.</p>
+        <span class="more">под размеры конкретного объекта</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ОБЪЕКТЫ -->
+<section class="sec projects" id="projects">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">04 · Объекты</span>
+      <h2>Завершённые проекты</h2>
+      <p class="lead">20 объектов — от газификации частного дома до блочно-модульной котельной 25 МВт. Фотографии с наших строек, нажмите чтобы открыть галерею.</p>
+    </div>
+    <div class="pj-grid">
+      <article class="pj" data-g="bmksamrek" data-title="БМК 25 МВт — ООО «СамРэк»"><span class="mw">25 МВт</span><img src="assets/projects/bmksamrek-01.webp" alt="БМК 25 МВт для ООО «СамРэк»" loading="lazy"><div class="ov"><b>БМК 25 МВт — ООО «СамРэк»</b><span>Блочно-модульная котельная · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="bmkelectroshit" data-title="БМК 19,5 МВт — АО «Электрощит Самара»"><span class="mw">19,5 МВт</span><img src="assets/projects/bmkelectroshit-01.webp" alt="БМК 19,5 МВт для АО «Электрощит Самара»" loading="lazy"><div class="ov"><b>БМК 19,5 МВт — АО «Электрощит Самара»</b><span>Техническое перевооружение · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="mon15kolos" data-title="Санаторий «Колос», Кинель-Черкассы"><span class="mw">1,5 МВт</span><img src="assets/projects/mon15kolos-01.webp" alt="Монтаж котельного оборудования 1,5 МВт для санатория «Колос»" loading="lazy"><div class="ov"><b>Санаторий «Колос», Кинель-Черкассы</b><span>Монтаж котельного оборудования · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="bmk600" data-title="БМК 600 кВт — с. Варламово"><span class="mw">600 кВт</span><img src="assets/projects/bmk600-01.webp" alt="Блочно-модульная котельная 600 кВт, с. Варламово" loading="lazy"><div class="ov"><b>БМК 600 кВт — с. Варламово</b><span>Блочно-модульная котельная · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="app" data-title="Модуль для «Самаранефтегеофизика»"><img src="assets/projects/app-01.jpg" alt="Модуль для «Самаранефтегеофизика»" loading="lazy"><div class="ov"><b>Модуль для «Самаранефтегеофизика»</b><span>Модульная котельная · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="dem" data-title="Демонтаж и монтаж двух котлов 2,5 МВт"><span class="mw">2,5 МВт</span><img src="assets/projects/dem-01.jpg" alt="Демонтаж и монтаж двух котлов 2,5 МВт" loading="lazy"><div class="ov"><b>Демонтаж и монтаж двух котлов 2,5 МВт</b><span>Демонтаж и монтаж · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="hleb" data-title="Самарский хлебозавод №5"><img src="assets/projects/hleb-01.jpg" alt="Самарский хлебозавод №5" loading="lazy"><div class="ov"><b>Самарский хлебозавод №5</b><span>Монтаж БМК парового и водогрейного режима · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="pohv" data-title="Котельная №1 — г. Похвистнево"><img src="assets/projects/pohv-01.jpg" alt="Монтажные работы в котельной №1, Похвистнево" loading="lazy"><div class="ov"><b>Котельная №1 — г. Похвистнево</b><span>Монтажные работы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="card" data-title="«Тяжмаш», цех №30"><img src="assets/projects/card-01.jpg" alt="Тяжмаш, цех №30" loading="lazy"><div class="ov"><b>«Тяжмаш», цех №30</b><span>Монтажные работы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="web" data-title="Чапаевск, «Лаварт»"><img src="assets/projects/web-01.jpg" alt="Чапаевск, Лаварт" loading="lazy"><div class="ov"><b>Чапаевск, «Лаварт»</b><span>Монтажные работы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="metal" data-title="«Металлист» — монтаж ГЛИ и ТВА"><img src="assets/projects/metal-01.jpg" alt="Металлист, монтаж ГЛИ и ТВА" loading="lazy"><div class="ov"><b>«Металлист» — монтаж ГЛИ и ТВА</b><span>Монтажные работы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="ptvm" data-title="ПТВМ 30 М"><img src="assets/projects/ptvm-01.jpg" alt="ПТВМ 30 М" loading="lazy"><div class="ov"><b>ПТВМ 30 М</b><span>Монтажные работы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="ptvmvent" data-title="Дымосос и вентилятор — котёл ПТВМ 30 М"><img src="assets/projects/ptvmvent-01.jpg" alt="Поставка дымососа и вентилятора для котла ПТВМ 30 М" loading="lazy"><div class="ov"><b>Дымосос и вентилятор — котёл ПТВМ 30 М</b><span>Поставка оборудования · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="kin" data-title="«Кинель 16», котельная"><img src="assets/projects/kin-01.jpg" alt="Кинель 16, котельная" loading="lazy"><div class="ov"><b>«Кинель 16», котельная</b><span>Монтажные работы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="grpsh" data-title="Монтаж газопровода ГРПШ и горелочного устройства"><img src="assets/projects/grpsh-01.jpg" alt="Монтаж газопровода ГРПШ и горелочного устройства" loading="lazy"><div class="ov"><b>Монтаж газопровода ГРПШ</b><span>Системы газоснабжения · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="svin" data-title="«Савруха», свинокомплекс"><img src="assets/projects/svin-01.jpg" alt="Свинокомплекс Савруха" loading="lazy"><div class="ov"><b>«Савруха», свинокомплекс</b><span>Инженерные системы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="bmk" data-title="«БМК 600» — Чапаевск"><img src="assets/projects/bmk-01.jpg" alt="БМК 600, Чапаевск" loading="lazy"><div class="ov"><b>«БМК 600» — Чапаевск</b><span>Блочно-модульная котельная · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="monsavruha" data-title="Зерносушилка — с. Савруха"><img src="assets/projects/monsavruha-01.webp" alt="Монтаж горелки для зерносушилки в с. Савруха" loading="lazy"><div class="ov"><b>Зерносушилка — с. Савруха</b><span>Монтаж горелки · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="mon" data-title="Монтаж газового теплогенератора"><img src="assets/projects/mon-01.jpg" alt="Монтажные работы газового теплогенератора" loading="lazy"><div class="ov"><b>Монтаж газового теплогенератора</b><span>Монтажные работы · <i class="cnt"></i></span></div></article>
+      <article class="pj" data-g="bez" data-title="Жилой дом — г. Безенчук"><img src="assets/projects/bez-01.jpg" alt="Монтаж котельной и газификация жилого дома, Безенчук" loading="lazy"><div class="ov"><b>Жилой дом — г. Безенчук</b><span>Монтаж котельной и газификация · <i class="cnt"></i></span></div></article>
+    </div>
+    <p class="pj-quote">«Пока кто-то думает, мы уже делаем»</p>
+  </div>
+</section>
+
+<!-- 05 ПОРЯДОК РАБОТ -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">05 · Порядок работ</span>
+      <h2>Как всё пройдёт</h2>
+      <p class="lead">Шесть шагов — от первого звонка до тёплого объекта. Сроки фиксируем до старта.</p>
+    </div>
+    <div class="st-grid">
+      <div class="st"><span class="n">01</span><b>Заявка и выезд</b><p>Обсуждаем задачу, выезжаем на объект, собираем данные. Для котельных — обследование действующей.</p></div>
+      <div class="st"><span class="n">02</span><b>Расчёт и предложение</b><p>Считаем состав работ и стоимость, фиксируем в предложении. Без «расплывётся в процессе».</p></div>
+      <div class="st"><span class="n">03</span><b>Проект</b><p>Разрабатываем проектную документацию, согласуем с вами каждый раздел.</p></div>
+      <div class="st"><span class="n">04</span><b>Экспертиза и согласования</b><p>Проходим госэкспертизу, согласования с Ростехнадзором и газовой службой — сами.</p></div>
+      <div class="st"><span class="n">05</span><b>Монтаж и наладка</b><p>Своя строительно-монтажная бригада, пусконаладка и режимная наладка оборудования.</p></div>
+      <div class="st"><span class="n">06</span><b>Ввод в эксплуатацию</b><p>Исполнительная документация, сдача объекта, обучение вашего персонала.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 КВИЗ -->
+<section class="sec" id="quiz" style="background:var(--raised)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">06 · Расчёт</span>
+      <h2>Ответьте на 4 вопроса — получите состав работ</h2>
+      <p class="lead">Займёт минуту. На выходе — готовый бриф: скопируйте его и отправьте нам или просто позвоните.</p>
+    </div>
+    <div class="quiz-wrap">
+      <div class="q-step on" data-step="1">
+        <span class="q-meta">Шаг 1 из 4</span>
+        <div class="q-q">Что за объект?</div>
+        <div class="q-opts">
+          <button type="button" class="q-opt">Частный дом / газификация</button>
+          <button type="button" class="q-opt">Промышленный объект, производство</button>
+          <button type="button" class="q-opt">ТСЖ, УК, административное здание</button>
+          <button type="button" class="q-opt">Сельхозобъект — ферма, зерносушилка</button>
+        </div>
+      </div>
+      <div class="q-step" data-step="2">
+        <span class="q-meta">Шаг 2 из 4</span>
+        <div class="q-q">Мощность или площадь?</div>
+        <div class="q-opts">
+          <button type="button" class="q-opt">До 100 кВт / до 300 м²</button>
+          <button type="button" class="q-opt">100–600 кВт / 300–1500 м²</button>
+          <button type="button" class="q-opt">600 кВт – 2 МВт</button>
+          <button type="button" class="q-opt">2 МВт и больше</button>
+          <button type="button" class="q-opt">Не знаю — нужна помощь</button>
+        </div>
+      </div>
+      <div class="q-step" data-step="3">
+        <span class="q-meta">Шаг 3 из 4</span>
+        <div class="q-q">С чего начать?</div>
+        <div class="q-opts">
+          <button type="button" class="q-opt">Всё под ключ</button>
+          <button type="button" class="q-opt">Только проект и экспертиза</button>
+          <button type="button" class="q-opt">Перевооружение действующей котельной</button>
+          <button type="button" class="q-opt">Газификация и согласования</button>
+        </div>
+      </div>
+      <div class="q-step" data-step="4">
+        <span class="q-meta">Шаг 4 из 4</span>
+        <div class="q-q">Куда позвонить?</div>
+        <div class="q-inputs">
+          <input type="text" id="qName" placeholder="Имя (необязательно)" autocomplete="off">
+          <input type="tel" id="qPhone" placeholder="Телефон" autocomplete="off">
+        </div>
+      </div>
+      <div class="q-result" id="qResult">
+        <span class="q-meta">Готово</span>
+        <div class="q-q">Ваш бриф собран</div>
+        <div class="q-sum" id="qSum"></div>
+        <div class="q-actions">
+          <button type="button" class="btn btn-red" id="qSend">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <span id="qSendLabel">Отправить бриф — перезвоним</span>
+          </button>
+          <button type="button" class="btn btn-card" id="qCopy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Скопировать бриф
+          </button>
+          <a class="btn btn-card" href="tel:+78462012576">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            Позвонить
+          </a>
+        </div>
+        <p class="q-note">Нажмите «Отправить» — бриф уйдёт нам на почту, и мы перезвоним по вашему номеру. Бриф поможет ничего не упустить в разговоре.</p>
+      </div>
+      <div class="q-nav" id="qNav">
+        <button type="button" class="btn btn-card" id="qBack" style="visibility:hidden">Назад</button>
+        <div class="q-progress"><i id="qBar" style="width:25%"></i></div>
+        <button type="button" class="btn btn-red" id="qNext">Далее</button>
+      </div>
+      <p class="quiz-phone">Или позвоните сразу: <a href="tel:+78462012576">8 (846) 201-25-76</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 ЧЕСТНЫЕ ОТВЕТЫ -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">07 · Вопросы и ответы</span>
+      <h2>О чём волнуются перед стартом</h2>
+      <p class="lead">Ответы построены на реальных цитатах клиентов и фактах компании.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <b>«Мне придётся бегать по инстанциям?»</b>
+        <p>Нет. Проект, госэкспертизу и согласования проходим сами — включая Ростехнадзор и газовые службы.</p>
+        <div class="cite">«Сами получили разрешения и согласования… берут всю эту головную боль на себя»<small>Лена С., отзыв на Яндекс.Картах, 14.10.2024</small></div>
+      </div>
+      <div class="faq-card">
+        <b>«Затянете сроки?»</b>
+        <p>Срок фиксируем до старта работ. Реальный пример темпа: частный дом был под газом через 3 месяца.</p>
+        <div class="cite">«Не дорого, быстро, чётко. 3 месяца и дом под газом»<small>Дмитрий Мосягин, отзыв на Яндекс.Картах, 24.02.2025</small></div>
+      </div>
+      <div class="faq-card">
+        <b>«Цена вырастет в процессе?»</b>
+        <p>Состав работ и стоимость фиксируем в предложении до начала. Проектные решения согласуем с вами до экспертизы.</p>
+        <div class="cite">«Цены, конечно, очень адекватные»<small>Лена С., отзыв на Яндекс.Картах, 14.10.2024</small></div>
+      </div>
+      <div class="faq-card">
+        <b>«Кто вообще эти люди?»</b>
+        <p>Компания из 17 человек, вся команда — на фото ниже, включая руководителей. Благодарственные письма от «Тяжмаша», УФСИН и «Самаранефтегеофизики» — на этом же экране.</p>
+        <div class="cite">«Дружная, профессиональная команда… качественно и в срок»<small>Денис И., отзыв на Яндекс.Картах, 05.02.2025</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 ОТЗЫВЫ -->
+<section class="sec" style="background:var(--raised)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">08 · Отзывы</span>
+      <h2>Что пишут клиенты</h2>
+      <p class="lead">Дословно, с Яндекс.Карт — площадки и даты указаны честно.</p>
+    </div>
+    <div class="rv-grid">
+      <div class="rv">
+        <span class="stars">★★★★★</span>
+        <p>Газификация дома со сложной разводкой. Нашли оптимальное решение, которое согласовала и газовая служба. Разрешения и согласования получили сами — «берут всю эту головную боль на себя». Цены очень адекватные.</p>
+        <div class="who">Лена С.<small>Яндекс.Карты · 14.10.2024</small></div>
+      </div>
+      <div class="rv">
+        <span class="stars">★★★★★</span>
+        <p>Дружная, профессиональная команда. Все работы выполнены качественно и в срок. Спасибо Александру, Дмитрию и Михаилу. Рекомендую.</p>
+        <div class="who">Денис И.<small>Яндекс.Карты · 05.02.2025</small></div>
+      </div>
+      <div class="rv">
+        <span class="stars">★★★★★</span>
+        <p>Всё просто «Ай лав ю»!!! Не дорого, быстро, чётко. 3 месяца и дом под газом.</p>
+        <div class="who">Дмитрий Мосягин<small>Яндекс.Карты · 24.02.2025</small></div>
+      </div>
+    </div>
+    <p class="rv-cta">Больше отзывов — на <a href="https://yandex.ru/maps/org/teploservis/50901719404" target="_blank" rel="noopener">Яндекс.Картах</a> и в <a href="https://2gis.ru/samara/firm/70000001060287399" target="_blank" rel="noopener">2ГИС</a>.</p>
+  </div>
+</section>
+
+<!-- 09 СТОИМОСТЬ -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">09 · Стоимость</span>
+      <h2>Из чего складывается цена</h2>
+      <p class="lead">После выезда на объект фиксируем состав работ и смету — она не меняется в процессе. Ниже — типовые направления.</p>
+    </div>
+    <div class="price-rows">
+      <div class="prow"><b>Газификация частного дома</b><span class="dots"></span><span class="val">смета до старта</span><small>Проект, согласования с газовой службой, монтаж, сдача. Реальный кейс: дом под газом за 3 месяца.</small></div>
+      <div class="prow"><b>БМК до 1 МВт</b><span class="dots"></span><span class="val">расчёт после обследования</span><small>Блочно-модульная котельная «под ключ»: проект, изготовление, монтаж, пусконаладка.</small></div>
+      <div class="prow"><b>Промышленная котельная (2–25 МВт)</b><span class="dots"></span><span class="val">расчёт после обследования</span><small>Техническое перевооружение или строительство. Опыт: БМК 25 МВт, 19,5 МВт.</small></div>
+      <div class="prow"><b>Проект и госэкспертиза</b><span class="dots"></span><span class="val">расчёт по документации</span><small>Проектная документация, прохождение экспертизы, согласования — без ваших поездок.</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 КОМАНДА -->
+<section class="sec team" id="team">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">10 · Команда</span>
+      <h2>Знакомьтесь — вот кто будет делать ваш объект</h2>
+      <p class="lead">Вся команда целиком: проектировщики, ПТО, монтажники и руководство. Лица, фамилии, ответственность поимённо.</p>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><img src="assets/team-1.jpg" alt="Гриценко Сергей Иванович" loading="lazy"><div class="nm"><b>Гриценко Сергей Иванович</b><span>технический директор</span></div></div>
+      <div class="tm"><img src="assets/team-2.jpg" alt="Гриценко Александр Сергеевич" loading="lazy"><div class="nm"><b>Гриценко Александр Сергеевич</b><span>управляющий</span></div></div>
+      <div class="tm"><img src="assets/team-3.jpg" alt="Гриценко Дмитрий Сергеевич" loading="lazy"><div class="nm"><b>Гриценко Дмитрий Сергеевич</b><span>главный инженер</span></div></div>
+      <div class="tm"><img src="assets/team-4.jpg" alt="Старков Денис Павлович" loading="lazy"><div class="nm"><b>Старков Денис Павлович</b><span>ГИП</span></div></div>
+      <div class="tm"><img src="assets/team-5.jpg" alt="Фетисова Екатерина Алексеевна" loading="lazy"><div class="nm"><b>Фетисова Екатерина Алексеевна</b><span>начальник ПТО</span></div></div>
+      <div class="tm"><img src="assets/team-6.jpg" alt="Глушенко Ольга Юрьевна" loading="lazy"><div class="nm"><b>Глушенко Ольга Юрьевна</b><span>главный бухгалтер</span></div></div>
+      <div class="tm"><img src="assets/team-7.jpg" alt="Кичемасов Михаил Сергеевич" loading="lazy"><div class="nm"><b>Кичемасов Михаил Сергеевич</b><span>начальник участка</span></div></div>
+      <div class="tm"><img src="assets/team-8.jpg" alt="Кошелева Татьяна Николаевна" loading="lazy"><div class="nm"><b>Кошелева Татьяна Николаевна</b><span>инженер ПТО</span></div></div>
+      <div class="tm"><img src="assets/team-9.jpg" alt="Солдаткина Ольга Михайловна" loading="lazy"><div class="nm"><b>Солдаткина Ольга Михайловна</b><span>инженер-проектировщик</span></div></div>
+      <div class="tm"><img src="assets/team-10.jpg" alt="Терёшина Марина Сергеевна" loading="lazy"><div class="nm"><b>Терёшина Марина Сергеевна</b><span>инженер-проектировщик</span></div></div>
+      <div class="tm"><img src="assets/team-11.jpg" alt="Маклашов Николай Александрович" loading="lazy"><div class="nm"><b>Маклашов Николай Александрович</b><span>инженер</span></div></div>
+      <div class="tm"><img src="assets/team-12.jpg" alt="Сотрудники строительно-монтажного отдела" loading="lazy"><div class="nm"><b>Строительно-монтажный отдел</b><span>бригада монтажников</span></div></div>
+    </div>
+    <div class="family">
+      <div class="fam-note">
+        <b>Семейное дело</b>
+        <p>Три Гриценко — отец и сыновья — ведут компанию с 2014 года. Технический директор — основатель, управляющий и главный инженер — рядом, в одном офисе на Карбышева, 67. За 11 лет компания выросла с 9 до 17 человек и довела мощности своих объектов до 25 МВт.</p>
+      </div>
+      <div class="fam-finst">
+        <b>ДФК «Финист»</b>
+        <p>Поддерживаем детскую футбольную команду «Финист» (манеж школы №67, Самара). Не для галочки — просто тепло должно греть и за пределами котельной.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 КЛИЕНТЫ И ПИСЬМА -->
+<section class="sec" id="clients">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">11 · Клиенты</span>
+      <h2>Письма, которые не выдумаешь</h2>
+      <p class="lead">Предприятия, на которых работают наши котельные и инженерные системы, — их словами.</p>
+    </div>
+    <div class="mq" aria-label="Логотипы заказчиков ТеплоСервис">
+      <div class="mq-track" id="mqTrack">
+        <img src="assets/clients/testimonials-2.jpg" alt="АО «Тяжмаш»" loading="lazy">
+        <img src="assets/clients/testimonials-3.jpg" alt="ПАО «Самаранефтегеофизика»" loading="lazy">
+        <img src="assets/clients/testimonials-1.jpg" alt="" loading="lazy">
+        <img src="assets/clients/testimonials-4.png" alt="" loading="lazy">
+        <img src="assets/clients/client-1.png" alt="" loading="lazy">
+        <img src="assets/clients/client-2.png" alt="" loading="lazy">
+        <img src="assets/clients/client-3.png" alt="" loading="lazy">
+        <img src="assets/clients/client-4.png" alt="" loading="lazy">
+        <img src="assets/clients/client-5.png" alt="" loading="lazy">
+        <img src="assets/clients/client-6.png" alt="" loading="lazy">
+        <img src="assets/clients/client-7.png" alt="" loading="lazy">
+        <img src="assets/clients/client-8.png" alt="" loading="lazy">
+        <img src="assets/clients/client-9.png" alt="" loading="lazy">
+        <img src="assets/clients/client-10.jpg" alt="" loading="lazy">
+        <img src="assets/clients/client-11.png" alt="" loading="lazy">
+        <img src="assets/clients/client-12.jpg" alt="" loading="lazy">
+      </div>
+    </div>
+    <div class="lt-tabs">
+      <div class="lt-quote">
+        <p id="ltText"></p>
+        <div class="who"><b id="ltWho"></b><span id="ltOrg"></span></div>
+      </div>
+      <div class="lt-nav" id="ltNav">
+        <button type="button">АО «Самарский жиркомбинат»</button>
+        <button type="button">АО «УФСИН по Самарской области»</button>
+        <button type="button">АО «Тяжмаш»</button>
+        <button type="button">ОАО «Металлист-Самара»</button>
+        <button type="button">ПАО «Самаранефтегеофизика»</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 КОНТАКТЫ -->
+<section class="sec contact" id="contact">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:40px">
+      <span class="kicker">12 · Контакты</span>
+      <h2>Позвоните — обсудим ваш объект</h2>
+    </div>
+    <div class="ct-grid">
+      <div>
+        <div class="ct-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><b>Телефон</b><a href="tel:+78462012576">8 (846) 201-25-76</a></div>
+        </div>
+        <div class="ct-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><b>Офис</b><span class="v">Самара, ул. Карбышева, 67, 1 этаж<br>пн–пт 09:00–17:00</span></div>
+        </div>
+        <div class="ct-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
+          <div><b>Почта</b><a href="mailto:teploservis2014@yandex.ru">teploservis2014@yandex.ru</a></div>
+        </div>
+        <div class="ct-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <div><b>Работаем</b><span class="v">Самара и вся Самарская область · выезд на объект</span></div>
+        </div>
+        <form class="lead-form" id="leadForm">
+          <div class="row2">
+            <input type="text" id="fName" placeholder="Имя" autocomplete="off">
+            <input type="tel" id="fPhone" placeholder="Телефон" autocomplete="off">
+          </div>
+          <select id="fNeed">
+            <option value="" selected>Что нужно сделать?</option>
+            <option>Всё под ключ</option>
+            <option>Проект и госэкспертиза</option>
+            <option>Перевооружение котельной</option>
+            <option>Газификация и согласования</option>
+            <option>Другое</option>
+          </select>
+          <textarea id="fMsg" placeholder="Коротко об объекте: адрес, площадь, мощность"></textarea>
+          <label class="consent"><input type="checkbox" id="fConsent" required><span>Согласен на обработку персональных данных</span></label>
+          <button type="submit" class="btn btn-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <span>Оставить заявку</span>
+          </button>
+        </form>
+      </div>
+      <div>
+        <div class="map-box">
+          <iframe src="https://yandex.ru/map-widget/v1/?ol=biz&oid=50901719404&z=17" title="ТеплоСервис на карте — Самара, ул. Карбышева, 67" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer>
+  <div class="container">
+    <div class="ft">
+      <img src="assets/logo-192.png" alt="ТеплоСервис">
+      <b>ТеплоСервис · Самара</b>
+      <nav class="ft-nav" aria-label="Меню футера">
+        <a href="#services">Услуги</a>
+        <a href="#projects">Объекты</a>
+        <a href="#team">Компания</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2014–2026 ООО «ТеплоСервис» · ИНН 6316204386 · ОГРН 1146316010202</span>
+      <span>Проектирование и строительство инженерных систем · Самара</span>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="c1" href="tel:+78462012576"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>Позвонить</a>
+  <a class="c2" href="#quiz">Расчёт за 4 шага</a>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ЛАЙТБОКС -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Закрыть">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Предыдущее фото">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Следующее фото">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<script>
+(function(){
+  var ZOOM_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>';
+
+  /* МОБИЛЬНОЕ МЕНЮ */
+  var burger = document.getElementById('burger');
+  var mMenu = document.getElementById('mMenu');
+  burger.addEventListener('click', function(){
+    var open = mMenu.classList.toggle('on');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  });
+  mMenu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') { mMenu.classList.remove('on'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* ГАЛЕРЕИ ОБЪЕКТОВ.
+     В deploy лежит только первое фото каждой галереи; допишите пути остальных
+     файлов в массивы — счётчик «N фото» на карточке пересчитается сам. */
+  var galleries = {
+    bmksamrek: ["assets/projects/bmksamrek-01.webp"],
+    bmkelectroshit: ["assets/projects/bmkelectroshit-01.webp"],
+    mon15kolos: ["assets/projects/mon15kolos-01.webp"],
+    bmk600: ["assets/projects/bmk600-01.webp"],
+    app: ["assets/projects/app-01.jpg"],
+    dem: ["assets/projects/dem-01.jpg"],
+    hleb: ["assets/projects/hleb-01.jpg"],
+    pohv: ["assets/projects/pohv-01.jpg"],
+    card: ["assets/projects/card-01.jpg"],
+    web: ["assets/projects/web-01.jpg"],
+    metal: ["assets/projects/metal-01.jpg"],
+    ptvm: ["assets/projects/ptvm-01.jpg"],
+    ptvmvent: ["assets/projects/ptvmvent-01.jpg"],
+    kin: ["assets/projects/kin-01.jpg"],
+    grpsh: ["assets/projects/grpsh-01.jpg"],
+    svin: ["assets/projects/svin-01.jpg"],
+    bmk: ["assets/projects/bmk-01.jpg"],
+    monsavruha: ["assets/projects/monsavruha-01.webp"],
+    mon: ["assets/projects/mon-01.jpg"],
+    bez: ["assets/projects/bez-01.jpg"]
+  };
+
+  /* счётчик фото на карточке объекта + иконка зума */
+  document.querySelectorAll('.pj[data-g]').forEach(function(card){
+    var g = galleries[card.dataset.g];
+    var cnt = card.querySelector('.cnt');
+    if (g && cnt) cnt.textContent = g.length + ' фото';
+    var z = document.createElement('span');
+    z.className = 'pj-zoom';
+    z.setAttribute('aria-hidden','true');
+    z.innerHTML = ZOOM_SVG;
+    card.appendChild(z);
+  });
+
+  /* иконка зума на фото команды */
+  document.querySelectorAll('.tm').forEach(function(t){
+    var z = document.createElement('span');
+    z.className = 'tm-zoom';
+    z.setAttribute('aria-hidden','true');
+    z.innerHTML = ZOOM_SVG;
+    t.appendChild(z);
+  });
+
+  /* бегущая строка логотипов: дублируем набор для бесшовного цикла */
+  var mqTrack = document.getElementById('mqTrack');
+  if (mqTrack) mqTrack.innerHTML += mqTrack.innerHTML;
+
+  var toast = document.getElementById('toast');
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('on');
+    setTimeout(function(){ toast.classList.remove('on'); }, 2600);
+  }
+
+  /* ОТПРАВКА ЗАЯВОК: AJAX POST на обработчик, письмо уходит на почту компании */
+  var BRIEF_API = 'send/brief.php';
+  function sendToApi(data, done){
+    fetch(BRIEF_API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){
+      return r.json().catch(function(){ return {ok: false}; });
+    }).then(function(j){
+      if (!j || j.ok !== true) throw new Error('send_failed');
+      done(null);
+    }).catch(function(e){ done(e); });
+  }
+
+  /* КВИЗ */
+  var answers = {};
+  var step = 1, total = 4;
+  var stepsEl = document.querySelectorAll('.q-step');
+  var bar = document.getElementById('qBar');
+  var next = document.getElementById('qNext');
+  var back = document.getElementById('qBack');
+  var nav = document.getElementById('qNav');
+  var result = document.getElementById('qResult');
+  function show(s){
+    step = s;
+    stepsEl.forEach(function(el){ el.classList.toggle('on', +el.dataset.step === s); });
+    bar.style.width = (s/total*100) + '%';
+    back.style.visibility = s > 1 ? 'visible' : 'hidden';
+  }
+  document.querySelectorAll('.q-opts').forEach(function(box, si){
+    box.querySelectorAll('.q-opt').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        box.querySelectorAll('.q-opt').forEach(function(b){ b.classList.remove('sel'); });
+        btn.classList.add('sel');
+        answers['s'+(si+1)] = btn.textContent.trim();
+        setTimeout(function(){ if (step < total) show(step+1); }, 180);
+      });
+    });
+  });
+  next.addEventListener('click', function(){
+    if (step < total) { show(step+1); return; }
+    var phone = (document.getElementById('qPhone').value || 'телефон не указан').trim();
+    var name = (document.getElementById('qName').value || '').trim();
+    var sum = 'Бриф на расчёт — ТеплоСервис\n'
+      + 'Объект: ' + (answers.s1 || 'не выбрано') + '\n'
+      + 'Мощность/площадь: ' + (answers.s2 || 'не выбрано') + '\n'
+      + 'С чего начать: ' + (answers.s3 || 'не выбрано') + '\n'
+      + (name ? 'Имя: ' + name + '\n' : '')
+      + 'Телефон: ' + phone;
+    document.getElementById('qSum').textContent = sum;
+    nav.style.display = 'none';
+    stepsEl.forEach(function(el){ el.classList.remove('on'); });
+    result.classList.add('on');
+  });
+  back.addEventListener('click', function(){ if (step > 1) show(step-1); });
+  document.getElementById('qCopy').addEventListener('click', function(){
+    var text = document.getElementById('qSum').textContent;
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); showToast('Бриф скопирован — вставьте в сообщение'); }
+      catch(e){ showToast('Скопируйте текст вручную'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){ showToast('Бриф скопирован — вставьте в сообщение'); }, fallback);
+    } else { fallback(); }
+  });
+  document.getElementById('qSend').addEventListener('click', function(){
+    var btn = this, label = document.getElementById('qSendLabel');
+    if (btn.disabled) return;
+    btn.disabled = true;
+    label.textContent = 'Отправляем…';
+    sendToApi({
+      type: 'brief',
+      name: (document.getElementById('qName').value || '').trim(),
+      phone: (document.getElementById('qPhone').value || '').trim(),
+      text: document.getElementById('qSum').textContent
+    }, function(err){
+      btn.disabled = false;
+      label.textContent = 'Отправить бриф — перезвоним';
+      if (!err) {
+        btn.classList.remove('btn-red');
+        btn.classList.add('btn-card');
+        btn.disabled = true;
+        label.textContent = 'Бриф отправлен — мы перезвоним';
+        showToast('Бриф отправлен на почту компании — перезвоним по вашему номеру');
+      } else {
+        showToast('Сервер заявок подключается при запуске сайта. Пока позвоните: 8 (846) 201-25-76');
+      }
+    });
+  });
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = this;
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn.disabled) return;
+    btn.disabled = true;
+    var label = btn.querySelector('span') || btn;
+    var oldLabel = label.textContent;
+    label.textContent = 'Отправляем…';
+    sendToApi({
+      type: 'lead',
+      name: document.getElementById('fName').value.trim(),
+      phone: document.getElementById('fPhone').value.trim(),
+      need: document.getElementById('fNeed').value,
+      msg: document.getElementById('fMsg').value.trim()
+    }, function(err){
+      btn.disabled = false;
+      label.textContent = oldLabel;
+      if (!err) {
+        form.reset();
+        showToast('Заявка отправлена на почту компании — перезвоним вам');
+      } else {
+        showToast('Сервер заявок подключается при запуске сайта. Пока позвоните: 8 (846) 201-25-76');
+      }
+    });
+  });
+
+  /* ПИСЬМА: ТАБЫ */
+  var letters = [
+    {text: 'Благодарим организацию ООО «ТеплоСервис» за качественное и добросовестное выполнение проектных, строительно-монтажных и пуско-наладочных работ на территории предприятия АО «Самарский жиркомбинат».', who: 'Главный инженер', org: 'АО «Самарский жиркомбинат»'},
+    {text: 'Благодарность за поставку и качество парового котла Е-1,0-0,9Г-3 — письмо в адрес компании подписал заместитель начальника, майор внутренней службы.', who: 'АО «УФСИН по Самарской области»', org: 'Письмо в адрес ООО «ТеплоСервис»'},
+    {text: 'Выражаю благодарность ООО «ТеплоСервис» за качественное и добросовестное выполнение проектных, строительно-монтажных и пуско-наладочных работ на территории предприятия АО «Тяжмаш»: проектирование и монтаж парового котла ДЕ 16/14, разработку ПОР на демонтаж дымовых труб высотой до 55 м, режимно-наладочные испытания паровых и водогрейных котлов. За период сотрудничества компания «ТеплоСервис» проявила себя как профессиональный партнёр, способный выполнять работы в сжатые сроки и с надлежащим качеством.', who: 'Главный энергетик А.А. Удалов', org: 'АО «Тяжмаш» · письмо от 04.05.2017'},
+    {text: 'Благодарим организацию ООО «ТеплоСервис» за качественное и добросовестное выполнение строительно-монтажных работ на территории предприятия АО «Металлист-Самара». Опираясь на предыдущий опыт, готовы рекомендовать ООО «ТеплоСервис» для выполнения проектирования и строительно-монтажных работ как надёжную, компетентную в своей области компанию.', who: 'Главный энергетик А.А. Липилин', org: 'ОАО «Металлист-Самара»'},
+    {text: 'Благодарность главного энергетика за модульную котельную, смонтированную для производственной базы предприятия.', who: 'ПАО «Самаранефтегеофизика»', org: 'Модульная котельная для производства'}
+  ];
+  var ltTextEl = document.getElementById('ltText');
+  var ltWhoEl = document.getElementById('ltWho');
+  var ltOrgEl = document.getElementById('ltOrg');
+  function ltShow(i){
+    document.querySelectorAll('#ltNav button').forEach(function(b, j){ b.classList.toggle('on', i === j); });
+    ltTextEl.textContent = letters[i].text;
+    ltWhoEl.textContent = letters[i].who;
+    ltOrgEl.textContent = letters[i].org;
+  }
+  document.querySelectorAll('#ltNav button').forEach(function(b, i){
+    b.addEventListener('click', function(){ ltShow(i); });
+  });
+  ltShow(0);
+
+  /* ЗВУК ВИДЕО */
+  var video = document.getElementById('heroVideo');
+  var sBtn = document.getElementById('soundToggle');
+  sBtn.addEventListener('click', function(){
+    video.muted = !video.muted;
+    sBtn.querySelector('.ic-on').style.display = video.muted ? 'none' : 'block';
+    sBtn.querySelector('.ic-off').style.display = video.muted ? 'block' : 'none';
+    sBtn.setAttribute('aria-label', video.muted ? 'Включить звук видео' : 'Выключить звук видео');
+  });
+
+  /* ЛАЙТБОКС */
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
+  var lbCount = document.getElementById('lbCount');
+  var lbFiles = [], lbIdx = 0, lbTitle = '';
+  function lbShow(i){
+    lbIdx = (i + lbFiles.length) % lbFiles.length;
+    lbImg.src = lbFiles[lbIdx];
+    lbImg.alt = lbTitle + ' — фото ' + (lbIdx + 1);
+    lbCap.textContent = lbTitle;
+    lbCount.textContent = lbFiles.length > 1 ? (lbIdx + 1) + ' / ' + lbFiles.length : '';
+    document.getElementById('lbPrev').style.display = lbFiles.length > 1 ? 'flex' : 'none';
+    document.getElementById('lbNext').style.display = lbFiles.length > 1 ? 'flex' : 'none';
+  }
+  function lbOpen(files, title, idx){
+    lbFiles = files; lbTitle = title || '';
+    lb.classList.add('on');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    lbShow(idx || 0);
+  }
+  function lbHide(){
+    lb.classList.remove('on');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbImg.removeAttribute('src');
+  }
+  document.querySelectorAll('.pj[data-g]').forEach(function(card){
+    card.addEventListener('click', function(){
+      var g = galleries[card.dataset.g];
+      if (g) lbOpen(g, card.dataset.title || '', 0);
+    });
+  });
+  document.querySelectorAll('[data-lb]').forEach(function(el){
+    el.addEventListener('click', function(){
+      lbOpen([el.dataset.lb], el.dataset.lbTitle || el.getAttribute('alt') || '', 0);
+    });
+  });
+  document.querySelectorAll('.tm').forEach(function(t){
+    t.addEventListener('click', function(){
+      var img = t.querySelector('img');
+      lbOpen([img.src], img.alt, 0);
+    });
+  });
+  document.getElementById('lbClose').addEventListener('click', lbHide);
+  document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); lbShow(lbIdx - 1); });
+  document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); lbShow(lbIdx + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) lbHide(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('on')) return;
+    if (e.key === 'Escape') lbHide();
+    if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+    if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+  });
+})();
+</script>
+</body>
+</html>
