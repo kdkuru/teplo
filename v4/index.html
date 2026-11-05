@@ -180,6 +180,7 @@ nav.hd-nav a:hover{color:#fff}
 .q-inputs{display:grid;gap:12px;max-width:420px}
 .q-inputs input{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px;color:#fff;font-size:15px;font-family:var(--font-body)}
 .q-inputs input::placeholder{color:#8B93A0}
+.inp-err{border-color:var(--red)!important;background:rgba(255,10,10,.08)!important}
 .q-note{font-size:14.5px;color:#fff;margin-top:14px}
 .q-result{display:none}
 .q-result.on{display:block}
@@ -542,8 +543,8 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
         <span class="q-meta">Шаг 4 из 4</span>
         <div class="q-q">Куда позвонить?</div>
         <div class="q-inputs">
-          <input type="text" id="qName" placeholder="Имя (необязательно)" autocomplete="off">
-          <input type="tel" id="qPhone" placeholder="Телефон" autocomplete="off">
+          <input type="text" id="qName" placeholder="Имя" autocomplete="off">
+          <input type="tel" id="qPhone" placeholder="Телефон" autocomplete="off" maxlength="18" inputmode="tel">
         </div>
       </div>
       <div class="q-result" id="qResult">
@@ -775,7 +776,7 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
         <form class="lead-form" id="leadForm">
           <div class="row2">
             <input type="text" id="fName" placeholder="Имя" autocomplete="off">
-            <input type="tel" id="fPhone" placeholder="Телефон" autocomplete="off">
+            <input type="tel" id="fPhone" placeholder="Телефон" autocomplete="off" maxlength="18" inputmode="tel">
           </div>
           <select id="fNeed">
             <option value="" selected>Что нужно сделать?</option>
@@ -869,6 +870,32 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
     toast.classList.add('on');
     setTimeout(function(){ toast.classList.remove('on'); }, 2600);
   }
+  /* МАСКА ТЕЛЕФОНА +7 (999) 999-99-99 и подсветка ошибок */
+  function maskPhone(input){
+    input.addEventListener('input', function(){
+      var d = input.value.replace(/\D/g,'');
+      if (d.length && d[0] === '8') d = '7' + d.slice(1);
+      if (d.length && d[0] !== '7') d = '7' + d;
+      d = d.slice(0, 11);
+      var out = '';
+      if (d.length >= 1) out = '+7';
+      if (d.length > 1) out += ' (' + d.slice(1, 4);
+      if (d.length >= 5) out += ') ' + d.slice(4, 7);
+      if (d.length >= 8) out += '-' + d.slice(7, 9);
+      if (d.length >= 10) out += '-' + d.slice(9, 11);
+      input.value = out;
+    });
+    input.addEventListener('input', function(){ input.classList.remove('inp-err'); });
+  }
+  function phoneDigits(el){ return (el.value.match(/\d/g) || []).length; }
+  var qNameEl = document.getElementById('qName');
+  var qPhoneEl = document.getElementById('qPhone');
+  var fNameEl = document.getElementById('fName');
+  var fPhoneEl = document.getElementById('fPhone');
+  [qPhoneEl, fPhoneEl].forEach(maskPhone);
+  [qNameEl, fNameEl].forEach(function(el){
+    el.addEventListener('input', function(){ el.classList.remove('inp-err'); });
+  });
   /* ОТПРАВКА ЗАЯВОК: AJAX POST на обработчик, письмо уходит на почту компании */
   var BRIEF_API = 'send/brief.php';
   function sendToApi(data, done){
@@ -895,14 +922,22 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
   });
   next.addEventListener('click', function(){
     if (step < total) { show(step+1); return; }
-    var phone = (document.getElementById('qPhone').value || 'телефон не указан').trim();
-    var name = (document.getElementById('qName').value || '').trim();
+    var name = qNameEl.value.trim();
+    var phoneOk = phoneDigits(qPhoneEl) === 11;
+    if (!name || !phoneOk) {
+      if (!name) qNameEl.classList.add('inp-err');
+      if (!phoneOk) qPhoneEl.classList.add('inp-err');
+      showToast(!name && !phoneOk ? 'Укажите имя и телефон'
+        : !name ? 'Укажите ваше имя'
+        : 'Введите телефон полностью');
+      return;
+    }
     var sum = 'Бриф на расчёт — ТеплоСервис\n'
       + 'Объект: ' + (answers.s1 || 'не выбрано') + '\n'
       + 'Мощность/площадь: ' + (answers.s2 || 'не выбрано') + '\n'
       + 'С чего начать: ' + (answers.s3 || 'не выбрано') + '\n'
       + (name ? 'Имя: ' + name + '\n' : '')
-      + 'Телефон: ' + phone;
+      + 'Телефон: ' + qPhoneEl.value;
     document.getElementById('qSum').textContent = sum;
     nav.style.display = 'none';
     stepsEl.forEach(function(el){ el.classList.remove('on'); });
@@ -949,6 +984,16 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     var form = this;
+    var nameOk = fNameEl.value.trim().length > 0;
+    var phoneOk = phoneDigits(fPhoneEl) === 11;
+    if (!nameOk || !phoneOk) {
+      if (!nameOk) fNameEl.classList.add('inp-err');
+      if (!phoneOk) fPhoneEl.classList.add('inp-err');
+      showToast(!nameOk && !phoneOk ? 'Укажите имя и телефон'
+        : !nameOk ? 'Укажите ваше имя'
+        : 'Введите телефон полностью');
+      return;
+    }
     var btn = form.querySelector('button[type="submit"]');
     if (btn.disabled) return;
     btn.disabled = true;
