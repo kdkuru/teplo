@@ -51,8 +51,9 @@
       width: 100%;
       max-width: 860px;
     }
+    .versions.wide { max-width: 1160px; grid-template-columns: repeat(4, 1fr); }
     @media (max-width: 720px) {
-      .versions { grid-template-columns: 1fr; max-width: 360px; }
+      .versions, .versions.wide { grid-template-columns: 1fr; max-width: 360px; }
       header { margin-bottom: 40px; }
     }
     a.card {
@@ -121,7 +122,7 @@
     <p>Выберите версию сайта для просмотра</p>
   </header>
 
-  <nav class="versions">
+  <nav class="versions wide">
     <a class="card" href="v1/">
       <span class="num">1</span>
       <h2>Версия 1</h2>
@@ -138,6 +139,12 @@
       <span class="num">3</span>
       <h2>Версия 3</h2>
       <p>Третий вариант дизайна лендинга</p>
+      <span class="go">Смотреть →</span>
+    </a>
+    <a class="card" href="v4/">
+      <span class="num">4</span>
+      <h2>Версия 4 <span style="color:#c6221d">· новая</span></h2>
+      <p>Вариант 1 + видео во весь экран первого экрана</p>
       <span class="go">Смотреть →</span>
     </a>
   </nav>
