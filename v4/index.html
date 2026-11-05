@@ -184,6 +184,17 @@ nav.hd-nav a:hover{color:#fff}
 .q-inputs input{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px;color:#fff;font-size:15px;font-family:var(--font-body)}
 .q-inputs input::placeholder{color:#8B93A0}
 .inp-err{border-color:var(--red)!important;background:rgba(255,10,10,.08)!important}
+.q-consent{display:flex;gap:10px;font-size:12px;color:#9AA1AC;align-items:flex-start;cursor:pointer;margin-top:14px}
+.q-consent input{width:16px;height:16px;margin-top:2px;accent-color:var(--red);flex:none}
+.q-consent a{color:#B9BFC9;text-decoration:underline}
+.q-consent.err{color:var(--red)}
+/* cookie bar */
+.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;max-width:860px;margin:0 auto;background:rgba(20,23,28,.96);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 18px;display:none;gap:16px;align-items:center;box-shadow:0 18px 50px rgba(0,0,0,.45);backdrop-filter:blur(8px)}
+.cookie-bar.on{display:flex}
+.cookie-bar p{font-size:13px;line-height:1.5;color:#C9CED6;flex:1}
+.cookie-bar a{color:#fff;text-decoration:underline}
+.cookie-bar .btn{flex:none;padding:10px 22px}
+@media(max-width:560px){.cookie-bar{flex-direction:column;align-items:stretch;text-align:left}}
 .q-note{font-size:14.5px;color:#fff;margin-top:14px}
 .q-result{display:none}
 .q-result.on{display:block}
@@ -289,6 +300,9 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
 .ft-nav{margin-left:auto;display:flex;gap:18px;font-size:13px;flex-wrap:wrap}
 .ft-nav a:hover{color:#fff}
 .ft-bottom{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+.ft-bottom a{color:#8B93A0;text-decoration:underline}
+.ft-bottom a:hover{color:#fff}
+.consent a{color:inherit;text-decoration:underline}
 /* sticky mobile callbar */
 .callbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px}
 .callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:14px;font-family:var(--font-head);font-weight:800;font-size:14px}
@@ -553,6 +567,7 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
           <input type="text" id="qName" placeholder="Имя" autocomplete="off">
           <input type="tel" id="qPhone" placeholder="Телефон" autocomplete="off" maxlength="18" inputmode="tel">
         </div>
+        <label class="consent q-consent"><input type="checkbox" id="qConsent"><span>Согласен на <a href="consent.html" target="_blank" rel="noopener">обработку персональных данных</a></span></label>
       </div>
       <div class="q-result" id="qResult">
         <span class="q-meta">Готово</span>
@@ -794,7 +809,7 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
             <option>Другое</option>
           </select>
           <textarea id="fMsg" placeholder="Коротко об объекте: адрес, площадь, мощность"></textarea>
-          <label class="consent"><input type="checkbox" id="fConsent" required><span>Согласен на обработку персональных данных</span></label>
+          <label class="consent"><input type="checkbox" id="fConsent" required><span>Согласен на <a href="consent.html" target="_blank" rel="noopener">обработку персональных данных</a></span></label>
           <button type="submit" class="btn btn-red">
             <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
             <span>Оставить заявку</span>
@@ -825,7 +840,7 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
     </div>
     <div class="ft-bottom">
       <span>© 2014–2026 ООО «ТеплоСервис» · ИНН 6316204386 · ОГРН 1146316010202</span>
-      <span>Проектирование и строительство инженерных систем · Самара</span>
+      <span><a href="privacy.html" target="_blank" rel="noopener">Политика конфиденциальности</a> · <a href="consent.html" target="_blank" rel="noopener">Согласие на обработку персональных данных</a></span>
     </div>
   </div>
 </footer>
@@ -836,6 +851,26 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- COOKIE BAR -->
+<div class="cookie-bar" id="cookieBar" role="dialog" aria-label="Уведомление об использовании cookie">
+  <p>Сайт использует файлы cookie и похожие технологии для корректной работы и анализа посещаемости. Продолжая пользоваться сайтом, вы соглашаетесь с обработкой данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</p>
+  <button type="button" class="btn btn-red" id="cookieOk">Хорошо</button>
+</div>
+<script>
+(function(){
+  try {
+    if (!localStorage.getItem('cookieOk')) {
+      var bar = document.getElementById('cookieBar');
+      bar.classList.add('on');
+      document.getElementById('cookieOk').addEventListener('click', function(){
+        try { localStorage.setItem('cookieOk', '1'); } catch(e){}
+        bar.classList.remove('on');
+      });
+    }
+  } catch(e){}
+})();
+</script>
 
 <!-- ЛАЙТБОКС -->
 <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии">
@@ -903,6 +938,9 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
   [qNameEl, fNameEl].forEach(function(el){
     el.addEventListener('input', function(){ el.classList.remove('inp-err'); });
   });
+  [document.getElementById('qConsent'), document.getElementById('fConsent')].forEach(function(el){
+    el.addEventListener('change', function(){ el.closest('.consent').classList.remove('err'); });
+  });
   /* ОТПРАВКА ЗАЯВОК: AJAX POST на обработчик, письмо уходит на почту компании */
   var BRIEF_API = 'send/brief.php';
   function sendToApi(data, done){
@@ -954,10 +992,14 @@ footer{background:#08090B;color:#7F8794;padding:34px 0}
     }
     var name = qNameEl.value.trim();
     var phoneOk = phoneDigits(qPhoneEl) === 11;
-    if (!name || !phoneOk) {
+    var consentEl = document.getElementById('qConsent');
+    var consentOk = consentEl.checked;
+    if (!name || !phoneOk || !consentOk) {
       if (!name) qNameEl.classList.add('inp-err');
       if (!phoneOk) qPhoneEl.classList.add('inp-err');
-      showToast(!name && !phoneOk ? 'Укажите имя и телефон'
+      if (!consentOk) consentEl.closest('.q-consent').classList.add('err');
+      showToast(!consentOk && name && phoneOk ? 'Нужно согласие на обработку данных'
+        : !name && !phoneOk ? 'Укажите имя и телефон'
         : !name ? 'Укажите ваше имя'
         : 'Введите телефон полностью');
       return;
