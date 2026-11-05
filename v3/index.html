@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Теплосервис — котельные, тепловые пункты и газоснабжение под ключ, Самара</title>
+<meta name="description" content="ООО «Теплосервис», Самара: проектирование, экспертиза, монтаж и режимная наладка котельных и тепловых пунктов. С 2014 года, мощности до 25 МВт. +7 (846) 201-25-76">
+<link rel="icon" type="image/png" href="logo/logo-192.png">
+<style>
+/* ============ ШРИФТЫ (локальные, кириллица) ============ */
+@font-face{font-family:'Inter';src:url('assets/fonts/inter-lat.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';src:url('assets/fonts/inter-cyr.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Oswald';src:url('assets/fonts/oswald-lat.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Oswald';src:url('assets/fonts/oswald-cyr.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+
+/* ============ ТОКЕНЫ (направление: «тёмная смена на производстве») ============ */
+:root{
+  --bg-dark:#0E2C40;          /* инженерная ночь, из финала фирменного видео */
+  --bg-dark-2:#0A2132;        /* шаг глубже */
+  --bg-light:#F4F5F6;
+  --surface:#FFFFFF;
+  --ink:#1A222B;
+  --ink-2:#54626D;
+  --ink-3:#8494A0;
+  --line:rgba(26,34,43,.09);
+  --on-dark:#E9EEF2;
+  --on-dark-2:rgba(233,238,242,.66);
+  --line-dark:rgba(233,238,242,.14);
+  --red:#FF0A0A;              /* сигнальный — на тёмном */
+  --red-deep:#DD0B0B;         /* тот же тон глубже — на светлом, контраст AA */
+  --red-hover:#B80808;
+  --blue:#3184EA;             /* микроакцент состояния */
+  --radius:14px;
+  --radius-s:10px;
+  --ease:cubic-bezier(.2,0,0,1);
+  --head:'Oswald',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+
+/* ============ БАЗА ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:400 16px/1.6 var(--body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--surface);color:var(--ink);padding:12px 20px;border-radius:0 0 var(--radius-s) 0}
+.skip-link:focus{left:0}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+section{scroll-margin-top:88px}
+
+/* Заголовки секций: подпись-деталь — линия-коллектор */
+.sec{padding:72px 0}
+.sec-head{max-width:720px;margin-bottom:40px}
+.collector{display:inline-flex;align-items:flex-start;gap:0;margin-bottom:16px}
+.collector i{display:block;width:44px;height:2px;background:var(--red);position:relative}
+.collector i::before,.collector i::after{content:"";position:absolute;top:-5px;width:2px;height:12px;background:var(--red)}
+.collector i::before{left:10px}
+.collector i::after{left:24px}
+.sec-head h2,.sec-head--wide h2{font:600 clamp(26px,3.6vw,40px)/1.15 var(--head);text-transform:uppercase;letter-spacing:.01em}
+.sec-head p{margin-top:12px;color:var(--ink-2);font-size:16px}
+.dark .sec-head p{color:var(--on-dark-2)}
+
+/* Кнопки */
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 24px;border-radius:var(--radius-s);font:500 16px/1 var(--body);transition:background-color .15s var(--ease),border-color .15s var(--ease),color .15s var(--ease),transform .1s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn--primary{background:var(--red);color:#fff}
+.btn--primary:hover{background:var(--red-hover)}
+.btn--ghost{border:1px solid var(--line-dark);color:var(--on-dark)}
+.btn--ghost:hover{border-color:var(--on-dark-2);background:rgba(233,238,242,.06)}
+.btn--ghost-light{border:1px solid var(--line);color:var(--ink)}
+.btn--ghost-light:hover{border-color:var(--ink-3);background:var(--bg-light)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Бирка (моно-метка объектов) */
+.tag{font:600 11px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;font-variant-numeric:tabular-nums;color:var(--red-deep)}
+.dark .tag{color:var(--red)}
+
+/* ============ ШАПКА ============ */
+.header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background-color .2s var(--ease),border-color .2s var(--ease);border-bottom:1px solid transparent}
+.header.scrolled{background:rgba(10,33,50,.92);backdrop-filter:blur(10px);border-bottom-color:var(--line-dark)}
+.header__in{display:flex;align-items:center;gap:24px;height:80px}
+.header__logo img{height:58px;width:auto;display:block}
+@media(min-width:1024px){.header__logo img{height:72px}}
+.nav{display:none;margin-left:auto}
+.nav ul{display:flex;gap:4px}
+.nav a{display:block;padding:10px 12px;font-size:14px;font-weight:500;color:var(--on-dark-2);border-radius:8px;transition:color .15s var(--ease),background-color .15s var(--ease)}
+.nav a:hover{color:var(--on-dark);background:rgba(233,238,242,.08)}
+.header__phone{display:none;margin-left:auto;color:var(--on-dark);font-weight:600;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.header__phone:hover{color:#fff}
+.header__cta{display:none;margin-left:16px}
+.burger{margin-left:auto;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--on-dark);border:1px solid var(--line-dark);border-radius:var(--radius-s)}
+.burger svg{width:20px;height:20px}
+@media(min-width:1024px){.nav{display:block}.header__phone{display:inline-flex}.header__cta{display:inline-flex}.burger{display:none}}
+
+/* Мобильное меню */
+.mobile-menu{position:fixed;inset:0;z-index:99;background:var(--bg-dark-2);padding:96px 24px 32px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .2s var(--ease),transform .2s var(--ease)}
+body.menu-open .mobile-menu{opacity:1;pointer-events:auto;transform:none}
+.mobile-menu nav{display:flex;flex-direction:column}
+.mobile-menu nav a{display:block;padding:16px 0;font:500 22px/1.2 var(--head);text-transform:uppercase;color:var(--on-dark);border-bottom:1px solid var(--line-dark)}
+.mobile-menu nav a:hover{color:#fff}
+.mobile-menu .mobile-menu__phone{margin-top:auto;padding:16px 0 0;border:0;font:600 20px/1 var(--body);color:#fff;font-variant-numeric:tabular-nums}
+.mobile-menu .mobile-menu__mail{padding:8px 0 0;border:0;font:400 15px/1 var(--body);color:var(--on-dark-2);text-transform:none}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100svh;background:var(--bg-dark-2);color:var(--on-dark);display:flex;flex-direction:column;overflow:hidden}
+.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.hero__shade{position:absolute;inset:0;background:linear-gradient(100deg,rgba(9,29,44,.93) 0%,rgba(9,29,44,.78) 46%,rgba(9,29,44,.35) 100%)}
+.hero__in{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:104px;padding-bottom:72px;width:100%}
+.hero__grid{display:grid;gap:40px;align-items:center}
+.hero__offer{max-width:640px}
+.hero h1{font:600 clamp(32px,4.6vw,54px)/1.12 var(--head);text-transform:uppercase;letter-spacing:.005em}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero__sub{margin-top:20px;font-size:clamp(16px,1.6vw,19px);line-height:1.55;color:var(--on-dark-2);max-width:520px}
+.hero__facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:24px;color:var(--on-dark-2);font-size:14px}
+.hero__facts b{color:var(--on-dark);font-weight:600;font-variant-numeric:tabular-nums}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero__phone{font-variant-numeric:tabular-nums}
+.hero__note{margin-top:12px;font-size:13px;color:var(--on-dark-2)}
+
+/* Сертификат в hero (решение клиента: показывать сразу; подача честная) */
+.hero__cert{position:relative;width:min(360px,100%);margin:0 auto;background:var(--surface);border-radius:var(--radius);padding:12px;box-shadow:0 16px 48px rgba(4,16,26,.45);transition:transform .15s var(--ease);text-align:left;display:block}
+.hero__cert:hover{transform:translateY(-2px)}
+.hero__cert img{border-radius:8px;aspect-ratio:16/10.5;object-fit:cover;width:100%}
+.hero__cert-body{padding:14px 6px 6px;color:var(--ink)}
+.hero__cert-body .tag{display:block;margin-bottom:6px}
+.hero__cert-body strong{display:block;font:500 15px/1.35 var(--body)}
+.hero__cert-body span{display:block;margin-top:4px;font-size:13px;color:var(--ink-2)}
+@media(min-width:900px){.hero__grid{grid-template-columns:1.25fr .75fr}.hero__cert{margin:0 0 0 auto}}
+
+/* Кнопка звука видео */
+.hero__sound{position:absolute;right:20px;bottom:20px;z-index:5;width:48px;height:48px;border-radius:12px;background:rgba(10,33,50,.65);border:1px solid var(--line-dark);color:var(--on-dark);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease)}
+.hero__sound:hover{background:rgba(10,33,50,.9)}
+.hero__sound svg{width:20px;height:20px}
+.hero__sound .off{display:none}
+.hero__sound.muted .on{display:none}
+.hero__sound.muted .off{display:block}
+
+/* ============ ЗАКАЗЧИКИ ============ */
+.clients{padding:40px 0;border-bottom:1px solid var(--line)}
+.clients__row{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding:4px 0}
+.clients__row::-webkit-scrollbar{display:none}
+.clients__row img{height:40px;width:auto;flex:none;filter:grayscale(1);opacity:.62;transition:filter .2s var(--ease),opacity .2s var(--ease)}
+.clients__row img:hover{filter:none;opacity:1}
+.clients__cap{margin-top:16px;font-size:13px;color:var(--ink-3)}
+
+/* ============ О КОМПАНИИ ============ */
+.about{padding:88px 0}
+.about__grid{display:grid;gap:48px}
+@media(min-width:900px){.about__grid{grid-template-columns:1.05fr .95fr;align-items:start}}
+.about__text h2{font:600 clamp(26px,3.4vw,38px)/1.15 var(--head);text-transform:uppercase}
+.about__text>p{margin-top:20px;color:var(--ink-2);max-width:520px}
+.about__list{margin-top:24px;display:grid;gap:12px}
+.about__list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
+.about__list svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--red-deep)}
+.about__nums{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.num-card{background:var(--bg-light);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px}
+.num-card b{display:block;font:600 clamp(30px,3.2vw,42px)/1 var(--head);font-variant-numeric:tabular-nums}
+.num-card b sup{font-size:.5em;color:var(--red-deep)}
+.num-card span{display:block;margin-top:10px;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.about__src{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
+
+/* ============ ЗАДАЧИ (вход) ============ */
+.tasks{background:var(--bg-dark);color:var(--on-dark);padding:88px 0}
+.tasks__grid{display:grid;gap:12px}
+@media(min-width:640px){.tasks__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.tasks__grid{grid-template-columns:repeat(5,1fr)}}
+.task{border:1px solid var(--line-dark);border-radius:var(--radius);padding:24px 20px;display:flex;flex-direction:column;gap:44px;min-height:196px;transition:border-color .15s var(--ease),background-color .15s var(--ease)}
+.task:hover{border-color:rgba(233,238,242,.4);background:rgba(233,238,242,.04)}
+.task .tag{color:var(--red)}
+.task h3{font:500 19px/1.3 var(--head);text-transform:uppercase;letter-spacing:.01em;margin-top:8px}
+.task p{margin-top:8px;font-size:13.5px;line-height:1.5;color:var(--on-dark-2);flex:1}
+.task__go{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:var(--on-dark)}
+.task__go svg{width:15px;height:15px;color:var(--red);transition:transform .15s var(--ease)}
+.task:hover .task__go svg{transform:translateX(3px)}
+
+/* ============ РЕЕСТР ОБЪЕКТОВ ============ */
+.registry{padding:88px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{height:40px;padding:0 18px;border-radius:20px;border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--ink-2);transition:color .15s var(--ease),border-color .15s var(--ease),background-color .15s var(--ease)}
+.chip:hover{border-color:var(--ink-3)}
+.chip[aria-pressed="true"]{background:var(--bg-dark);border-color:var(--bg-dark);color:#fff}
+.reg{border-top:1px solid var(--line)}
+.reg__row{display:grid;grid-template-columns:88px 1fr 44px;gap:8px 16px;padding:18px 4px;border-bottom:1px solid var(--line);align-items:center}
+.reg__mw{font:600 17px/1.2 var(--head);font-variant-numeric:tabular-nums;color:var(--red-deep);white-space:nowrap}
+.reg__mw--empty{color:var(--ink-3);font:400 13px/1 var(--body)}
+.reg__title{font-weight:600;font-size:15.5px;line-height:1.35}
+.reg__meta{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:4px;font-size:13.5px;color:var(--ink-2)}
+.reg__meta .tag{font-size:10.5px}
+.reg__client{grid-column:2 / -1;font-size:13.5px;color:var(--ink-2)}
+.reg__client b{color:var(--ink);font-weight:500}
+.reg__photo{grid-row:1;grid-column:3;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--ink-2);transition:color .15s var(--ease),border-color .15s var(--ease)}
+.reg__photo:hover{color:var(--red-deep);border-color:var(--red-deep)}
+.reg__photo svg{width:18px;height:18px}
+@media(min-width:900px){
+  .reg__row{grid-template-columns:104px minmax(320px,1.4fr) 220px 120px 44px;padding:16px 4px}
+  .reg__mw{font-size:19px}
+  .reg__title{font-size:16px}
+  .reg__client{grid-column:auto;font-size:14px}
+  .reg__work{grid-column:auto}
+  .reg__photo{grid-column:5}
+}
+.reg__empty-note{margin-top:16px;font-size:13px;color:var(--ink-3)}
+.reg__hidden{display:none}
+
+/* Полоса примеров над реестром */
+.reg-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+.strip-item{position:relative;padding:0;border:0;border-radius:var(--radius-s);overflow:hidden;aspect-ratio:4/3;background:var(--bg-light);cursor:zoom-in}
+.strip-item img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .15s var(--ease)}
+.strip-item:hover img{opacity:.86}
+.strip-item:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.strip-cap{position:absolute;left:0;right:0;bottom:0;padding:28px 10px 8px;background:linear-gradient(transparent,rgba(9,29,44,.88));color:#fff;font:600 10.5px/1.35 var(--body);letter-spacing:.05em;text-transform:uppercase;font-variant-numeric:tabular-nums;text-align:left}
+@media(max-width:720px){.reg-strip{grid-template-columns:repeat(2,1fr)}.strip-cap{font-size:9.5px;padding-top:20px}}
+
+/* ============ УСЛУГИ ============ */
+.services{padding:88px 0;background:var(--bg-light)}
+.services__grid{display:grid;gap:16px}
+@media(min-width:720px){.services__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.services__grid{grid-template-columns:repeat(3,1fr)}}
+.srv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.srv img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.srv--quiet{background:var(--bg-light);justify-content:space-between}
+.srv--quiet .srv__num{font:600 64px/1 var(--head);color:rgba(26,34,43,.10);padding:16px 20px 0;font-variant-numeric:tabular-nums}
+.srv__body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.srv__body .tag{font-size:10.5px;color:var(--ink-3)}
+.srv h3{font:500 20px/1.25 var(--head);text-transform:uppercase}
+.srv p{font-size:14px;line-height:1.55;color:var(--ink-2)}
+.srv__more{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:500;color:var(--red-deep)}
+.srv__more svg{width:14px;height:14px}
+
+/* ============ ПРОЦЕСС ============ */
+.process{background:var(--bg-dark);color:var(--on-dark);padding:88px 0}
+.steps{display:grid;gap:12px;counter-reset:step}
+@media(min-width:720px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.steps{grid-template-columns:repeat(5,1fr)}}
+.step{border:1px solid var(--line-dark);border-radius:var(--radius);padding:24px 20px;min-height:180px;display:flex;flex-direction:column}
+.step .tag{color:var(--red)}
+.step h3{font:500 18px/1.3 var(--head);text-transform:uppercase;margin-top:12px}
+.step p{margin-top:8px;font-size:13.5px;line-height:1.5;color:var(--on-dark-2);flex:1}
+.process__note{margin-top:20px;font-size:13px;color:var(--on-dark-2)}
+
+/* ============ ДОКУМЕНТЫ ============ */
+.docs{padding:88px 0}
+/* письма-цитаты с переключателем (переосмысление карусели старого сайта) */
+.letters{display:grid;gap:24px}
+@media(min-width:900px){.letters{grid-template-columns:1.55fr .95fr;align-items:start}}
+.letters__quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;min-height:320px}
+.letters__text{font-size:clamp(17px,1.5vw,20px);line-height:1.7;color:var(--ink)}
+.letters__who{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.letters__who b{font-weight:600;font-size:15px;color:var(--ink)}
+.letters__who span{font-size:13.5px;color:var(--ink-3)}
+.letters__acts{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.letters__tabs{display:grid;gap:8px}
+.ltab{text-align:left;padding:14px 18px;background:var(--bg-light);border:1px solid var(--line);border-left:3px solid transparent;border-radius:10px;font:500 15px/1.35 var(--body);color:var(--ink-2);transition:color .15s var(--ease),border-color .15s var(--ease),background-color .15s var(--ease)}
+.ltab:hover{color:var(--ink)}
+.ltab[aria-selected="true"]{background:var(--surface);border-left-color:var(--red-deep);color:var(--ink)}
+@media(max-width:899px){
+  .letters__tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;order:-1}
+  .letters__tabs::-webkit-scrollbar{display:none}
+  .ltab{white-space:nowrap;border:1px solid var(--line);border-bottom:3px solid transparent;padding:10px 16px}
+  .ltab[aria-selected="true"]{border-bottom-color:var(--red-deep)}
+}
+
+/* чип PDF в письмах */
+.drow__pdf{flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s var(--ease),color .15s var(--ease)}
+.drow__pdf:hover{border-color:var(--red-deep);color:var(--red-deep)}
+.drow__pdf svg{width:14px;height:14px}
+@media(max-width:600px){
+  .drow{flex-wrap:wrap}
+  .drow__body{flex:1 1 calc(100% - 76px)}
+  .drow__pdf{margin-left:76px}
+}
+
+/* ============ ОТЗЫВЫ ============ */
+.reviews{padding:88px 0;background:var(--bg-light)}
+.reviews__note{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;padding:8px 14px;border-radius:18px;background:var(--surface);border:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.reviews__note svg{width:14px;height:14px;color:var(--blue)}
+.reviews__grid{display:grid;gap:16px}
+@media(min-width:720px){.reviews__grid{grid-template-columns:repeat(3,1fr)}}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column}
+.review blockquote{font-size:15px;line-height:1.6;color:var(--ink);flex:1}
+.review__who{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.review__who b{display:block;font-weight:600;font-size:14.5px}
+.review__who span{display:block;margin-top:2px;font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+/* ============ КОМАНДА ============ */
+.team{padding:88px 0}
+.team__grid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:640px){.team__grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1024px){.team__grid{grid-template-columns:repeat(4,1fr)}}
+.member{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--bg-light)}
+.member img{aspect-ratio:3/3.4;object-fit:cover;width:100%;filter:grayscale(.15)}
+.member__body{padding:14px 16px}
+.member__body b{display:block;font-weight:600;font-size:14.5px;line-height:1.35}
+.member__body span{display:block;margin-top:2px;font-size:12.5px;color:var(--ink-2)}
+
+/* ============ ПАРТНЁРЫ ============ */
+.partners{padding:88px 0;background:var(--bg-light)}
+.partners__grid{display:grid;gap:16px}
+@media(min-width:720px){.partners__grid{grid-template-columns:repeat(3,1fr)}}
+.partner{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:10px}
+.partner h3{font:500 19px/1.3 var(--head);text-transform:uppercase}
+.partner .tag{color:var(--ink-3)}
+.partner p{font-size:14px;line-height:1.55;color:var(--ink-2);flex:1}
+.partner__cert{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:10px 16px;border:1px solid var(--line);border-radius:10px;font-size:13.5px;font-weight:500;color:var(--ink);transition:border-color .15s var(--ease),color .15s var(--ease)}
+.partner__cert:hover{border-color:var(--red-deep);color:var(--red-deep)}
+.partner__cert svg{width:16px;height:16px}
+
+/* ============ ФИНИСТ ============ */
+.finist{background:var(--bg-dark-2);color:var(--on-dark);padding:88px 0}
+.finist__grid{display:grid;gap:40px}
+@media(min-width:900px){.finist__grid{grid-template-columns:.9fr 1.1fr;align-items:center}}
+.finist p{color:var(--on-dark-2);max-width:440px;margin-top:16px}
+.finist__photos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.finist__photos button{border:0;padding:0;border-radius:var(--radius-s);overflow:hidden}
+.finist__photos img{aspect-ratio:4/3;object-fit:cover;width:100%;transition:opacity .15s var(--ease)}
+.finist__photos button:hover img{opacity:.85}
+
+/* ============ КОНТАКТЫ ============ */
+.contacts{padding:88px 0}
+.contacts__grid{display:grid;gap:40px}
+@media(min-width:900px){.contacts__grid{grid-template-columns:1fr 1fr;align-items:start}}
+.contact-phone{font:600 clamp(26px,3.4vw,40px)/1.1 var(--head);font-variant-numeric:tabular-nums;color:var(--ink);display:inline-block}
+.contact-phone:hover{color:var(--red-deep)}
+.contact-rows{margin-top:28px;display:grid;gap:0}
+.contact-row{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line);align-items:flex-start}
+.contact-row svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--red-deep)}
+.contact-row b{display:block;font-weight:600;font-size:14.5px}
+.contact-row span{display:block;margin-top:2px;font-size:14px;color:var(--ink-2)}
+.contact-row a:hover{text-decoration:underline}
+.contacts__cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.contacts__note{margin-top:16px;font-size:13px;color:var(--ink-3);max-width:460px}
+.map-ph{border:1.5px dashed rgba(26,34,43,.25);border-radius:var(--radius);min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:var(--bg-light) repeating-linear-gradient(45deg,transparent 0 12px,rgba(26,34,43,.025) 12px 24px);position:relative}
+.map-ph svg{width:28px;height:28px;color:var(--ink-3)}
+.map-ph b{font:500 15px/1.4 var(--body);color:var(--ink-2);text-align:center;padding:0 24px}
+.map-ph .tag{position:absolute;top:12px;right:12px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 10px;color:var(--ink-3)}
+
+/* ============ ФУТЕР ============ */
+.footer{background:var(--bg-dark-2);color:var(--on-dark);padding:56px 0 32px}
+.footer__top{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+.footer img{height:52px;width:auto}
+.footer__nav{display:flex;flex-wrap:wrap;gap:4px 20px}
+.footer__nav a{font-size:14px;color:var(--on-dark-2);padding:6px 0}
+.footer__nav a:hover{color:#fff}
+.footer__req{font-size:13px;color:var(--on-dark-2);line-height:1.7;font-variant-numeric:tabular-nums}
+.footer__collector{margin:40px 0 24px;height:2px;background:var(--red);position:relative}
+.footer__collector::before{content:"";position:absolute;left:10%;top:-5px;width:2px;height:12px;background:var(--red)}
+.footer__collector::after{content:"";position:absolute;left:24%;top:-5px;width:2px;height:12px;background:var(--red)}
+.footer__bottom{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:12.5px;color:rgba(233,238,242,.5)}
+
+/* защита grid-колонок от распирания replace-элементами */
+.docs__grid>*,.services__grid>*,.reviews__grid>*,.team__grid>*,.partners__grid>*,.tasks__grid>*,.steps>*,.about__grid>*,.contacts__grid>*,.finist__grid>*,.hero__grid>*{min-width:0}
+.pdf-row{flex-wrap:wrap}
+.pdf-row b{min-width:0}
+
+/* ============ ЛАЙТБОКС ============ */
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(6,18,28,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:24px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(1100px,100%);max-height:calc(100svh - 160px);object-fit:contain;border-radius:8px;background:#fff}
+.lightbox__cap{margin-top:16px;color:var(--on-dark);font-size:14px;text-align:center;max-width:720px}
+.lightbox__counter{margin-top:6px;color:var(--on-dark-2);font-size:12.5px;font-variant-numeric:tabular-nums}
+.lightbox__close{position:absolute;top:16px;right:16px;width:48px;height:48px;border-radius:12px;border:1px solid var(--line-dark);color:var(--on-dark);display:inline-flex;align-items:center;justify-content:center;background:rgba(10,33,50,.5)}
+.lightbox__close:hover{background:rgba(10,33,50,.9)}
+.lightbox__close svg,.lightbox__nav svg{width:20px;height:20px}
+.lightbox__nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:12px;border:1px solid var(--line-dark);color:var(--on-dark);display:inline-flex;align-items:center;justify-content:center;background:rgba(10,33,50,.5)}
+.lightbox__nav:hover{background:rgba(10,33,50,.9)}
+.lightbox__nav--prev{left:16px}
+.lightbox__nav--next{right:16px}
+.lightbox__nav[hidden]{display:none}
+
+/* ============ MOTION ============ */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+  .hero__video{display:none}
+  .hero{background:var(--bg-dark-2) url('assets/img/hero-bg1.jpg') center/cover no-repeat}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">К основному содержанию</a>
+
+<!-- ШАПКА -->
+<header class="header" id="header">
+  <div class="container header__in">
+    <a href="#hero" class="header__logo" aria-label="Теплосервис, Самара — на главную">
+      <img src="logo/logo-192.png" alt="Логотип Теплосервис, Самара" width="66" height="66">
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#registry">Объекты</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#docs">Письма</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <a class="header__phone" href="tel:+78462012576">+7 (846) 201-25-76</a>
+    <a class="btn btn--primary header__cta" href="tel:+78462012576">Позвонить</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <nav aria-label="Меню">
+    <a href="#about">О компании</a>
+    <a href="#tasks">С чего начать</a>
+    <a href="#registry">Объекты</a>
+    <a href="#services">Услуги</a>
+    <a href="#docs">Письма</a>
+    <a href="#team">Команда</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="mobile-menu__phone" href="tel:+78462012576">+7 (846) 201-25-76</a>
+  <a class="mobile-menu__mail" href="mailto:teploservis2014@yandex.ru">teploservis2014@yandex.ru</a>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-bg1.jpg">
+    <source src="assets/video/video-hero-sound.mp4" type="video/mp4">
+  </video>
+  <div class="hero__shade" aria-hidden="true"></div>
+
+  <div class="container hero__in">
+    <div class="hero__grid">
+      <div class="hero__offer">
+        <h1>Котельные, тепловые&nbsp;пункты и&nbsp;газоснабжение — <em>под&nbsp;ключ</em></h1>
+        <p class="hero__sub">От проекта и экспертизы до монтажа и режимной наладки. Сами проходим согласования и остаёмся рядом после запуска</p>
+        <div class="hero__facts">
+          <span><b>с 2014</b> года на рынке</span>
+          <span><b>до 25 МВт</b> — мощности объектов</span>
+          <span><b>Самара</b> и область</span>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--primary hero__phone" href="tel:+78462012576">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>
+            +7 (846) 201-25-76
+          </a>
+          <a class="btn btn--ghost" href="#registry">Завершённые объекты</a>
+        </div>
+        <p class="hero__note">Пн–пт 09:00–17:00 · звонок = разговор с инженером</p>
+      </div>
+
+      <button class="hero__cert" data-gal="sert" aria-label="Сертификат «Лучшее предприятие отрасли 2025», открыть крупно">
+        <img src="assets/img/sert-small.jpg" alt="Сертификат рейтинга надёжных партнёров России, категория AAA, 2025" width="336" height="220">
+        <span class="hero__cert-body">
+          <span class="tag">Рейтинг · категория AAA · 2025</span>
+          <strong>«Лучшее предприятие отрасли» — по финансово-экономическим показателям в разрезе ОКВЭД 35.30.4</strong>
+          <span>Открывается по клику — скан оригинала</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <button class="hero__sound muted" id="soundToggle" aria-label="Включить звук видео" aria-pressed="false">
+    <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+    <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m16 9 6 6M22 9l-6 6"/></svg>
+  </button>
+</section>
+
+<!-- ЗАКАЗЧИКИ -->
+<div class="clients">
+  <div class="container">
+    <div class="clients__row" aria-label="Логотипы заказчиков и партнёров">
+      <img src="assets/img/clients/client-1.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-2.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-3.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-4.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-5.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-6.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-7.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-8.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-9.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-10.jpg" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-11.png" alt="Логотип заказчика" loading="lazy">
+      <img src="assets/img/clients/client-12.jpg" alt="Логотип заказчика" loading="lazy">
+    </div>
+    <p class="clients__cap">Среди заказчиков — АО «Тяжмаш», АО «Электрощит Самара», ПАО «Самаранефтегеофизика», АО «Самарский жиркомбинат», ОАО «Металлист-Самара» и другие предприятия региона</p>
+  </div>
+</div>
+
+<!-- О КОМПАНИИ -->
+<section class="about" id="about">
+  <div class="container about__grid">
+    <div class="about__text">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="collector" aria-hidden="true"><i></i></span>
+        <h2>Инженерная компания полного цикла</h2>
+      </div>
+      <p>Проектируем, проходим экспертизу, монтируем и налаживаем котельные, тепловые пункты и системы газоснабжения. Своя база в Самаре на Карбышева, 67, отдел ПТО и проектировщики в штате</p>
+      <ul class="about__list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Работаем с промышленными объектами, муниципальными заказчиками и частными домами</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Готовим проектную документацию любой сложности и сопровождаем согласования</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Официальный партнёр LAVART, PikInno и «Рационал», производитель котельных «Рационал»</li>
+      </ul>
+    </div>
+    <div>
+      <div class="about__nums">
+        <div class="num-card"><b>11</b><span>лет на рынке — работает с 26.11.2014</span></div>
+        <div class="num-card"><b>17</b><span>инженеров и специалистов в штате за 2025 год</span></div>
+        <div class="num-card"><b>78 <sup>млн ₽</sup></b><span>госконтрактов заключено — 15 контрактов, 13 заказчиков</span></div>
+        <div class="num-card"><b>25 <sup>МВт</sup></b><span>мощность самой крупной построенной котельной</span></div>
+      </div>
+      <p class="about__src">Цифры штата и контрактов — по открытым реестрам (ЕГРЮЛ, Rusprofile), 2025</p>
+    </div>
+  </div>
+</section>
+
+<!-- ЗАДАЧИ -->
+<section class="tasks dark" id="tasks">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Начните с задачи</h2>
+      <p>Назовите свою — подскажем состав работ, сроки и покажем похожие объекты</p>
+    </div>
+    <div class="tasks__grid">
+      <a class="task" href="#services">
+        <span class="tag">01</span>
+        <div><h3>Построить котельную</h3><p>Блочно-модульные котельные от 600 кВт до 25 МВт — от площадки до режимной наладки</p></div>
+        <span class="task__go">Объекты и услуга <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </a>
+      <a class="task" href="#services">
+        <span class="tag">02</span>
+        <div><h3>Заменить или модернизировать котлы</h3><p>Демонтаж и монтаж котлов, перевооружение, поставка дымососов и вентиляторов</p></div>
+        <span class="task__go">Объекты и услуга <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </a>
+      <a class="task" href="#services">
+        <span class="tag">03</span>
+        <div><h3>Провести газ</h3><p>Газопроводы всех давлений, ГРП и ГРУ, узлы учёта, газификация зданий</p></div>
+        <span class="task__go">Объекты и услуга <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </a>
+      <a class="task" href="#services">
+        <span class="tag">04</span>
+        <div><h3>Согласовать проект</h3><p>Проектная документация, госэкспертиза, согласование с Ростехнадзором</p></div>
+        <span class="task__go">Объекты и услуга <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </a>
+      <a class="task" href="#services">
+        <span class="tag">05</span>
+        <div><h3>Наладить и обслуживать</h3><p>Пусконаладочные и режимно-наладочные работы, автоматизация, сервис</p></div>
+        <span class="task__go">Объекты и услуга <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- РЕЕСТР ОБЪЕКТОВ -->
+<section class="registry" id="registry">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Завершённые объекты</h2>
+      <p>Самара и Самарская область, 2014–2026. Мощности указаны там, где подтверждены портфолио и письмами</p>
+    </div>
+
+    <div class="reg-strip" aria-label="Примеры выполненных объектов">
+      <button class="strip-item" data-gal="bmk195" aria-label="БМК 19,5 МВт, АО «Электрощит Самара» — открыть все 12 фото">
+        <img src="assets/img/portfolio/large/bmk1951.webp" alt="Машинный зал БМК 19,5 МВт с насосами" loading="lazy">
+        <span class="strip-cap">БМК 19,5 МВт · АО «Электрощит Самара»</span>
+      </button>
+      <button class="strip-item" data-gal="kolos" aria-label="Монтаж котельного оборудования 1,5 МВт, санаторий «Колос» — открыть все 14 фото">
+        <img src="assets/img/portfolio/large/mon15kolos3.webp" alt="Котлы NOBEL с красными горелками, санаторий «Колос»" loading="lazy">
+        <span class="strip-cap">1,5 МВт · санаторий «Колос»</span>
+      </button>
+      <button class="strip-item" data-gal="bmk25" aria-label="БМК 25 МВт, ООО «СамРэк» — открыть все 9 фото">
+        <img src="assets/img/portfolio/large/bmk256.webp" alt="Здание БМК 25 МВт зимой, дым из трубы" loading="lazy">
+        <span class="strip-cap">БМК 25 МВт · ООО «СамРэк»</span>
+      </button>
+      <button class="strip-item" data-gal="web" aria-label="Оборудование LAVART, Чапаевск — открыть фото">
+        <img src="assets/img/portfolio/portfolio-2.jpg" alt="Красный котёл LAVART крупным планом" loading="lazy">
+        <span class="strip-cap">Котёл LAVART · г. Чапаевск</span>
+      </button>
+      <button class="strip-item" data-gal="card" aria-label="АО «Тяжмаш», цех № 30 — открыть фото">
+        <img src="assets/img/portfolio/portfolio-7.jpg" alt="Монтажники у красного котла на АО «Тяжмаш»" loading="lazy">
+        <span class="strip-cap">Монтаж котла · АО «Тяжмаш»</span>
+      </button>
+      <button class="strip-item" data-gal="bmk195" aria-label="БМК 19,5 МВт, АО «Электрощит Самара» — открыть все 12 фото">
+        <img src="assets/img/portfolio/large/bmk1955.webp" alt="Пластинчатые теплообменники БМК" loading="lazy">
+        <span class="strip-cap">Теплообменники · 19,5 МВт</span>
+      </button>
+      <button class="strip-item" data-gal="app" aria-label="Модуль для ПАО «Самаранефтегеофизика» — открыть фото">
+        <img src="assets/img/portfolio/portfolio-6.jpg" alt="Модуль на трале для перевозки" loading="lazy">
+        <span class="strip-cap">Модуль · ПАО «Самаранефтегеофизика»</span>
+      </button>
+      <button class="strip-item" data-gal="ptvm" aria-label="Котёл ПТВМ 30 М — открыть все 8 фото">
+        <img src="assets/img/portfolio/ptvm1.jpg" alt="Сварщик работает на котле ПТВМ 30 М" loading="lazy">
+        <span class="strip-cap">Котёл ПТВМ 30 М · сварка</span>
+      </button>
+    </div>
+
+    <div class="chips" role="group" aria-label="Фильтр объектов">
+      <button class="chip" data-f="all" aria-pressed="true">Все</button>
+      <button class="chip" data-f="bmk" aria-pressed="false">Котельные БМК</button>
+      <button class="chip" data-f="montazh" aria-pressed="false">Монтаж и демонтаж</button>
+      <button class="chip" data-f="gaz" aria-pressed="false">Газоснабжение</button>
+      <button class="chip" data-f="postavka" aria-pressed="false">Поставка и изготовление</button>
+    </div>
+
+    <ul class="reg" id="regList">
+      <li class="reg__row" data-cat="bmk">
+        <span class="reg__mw">25 МВт</span>
+        <div><div class="reg__title">Блочно-модульная котельная</div><div class="reg__meta"><span class="reg__work">БМК под ключ</span></div></div>
+        <span class="reg__client"><b>ООО «СамРэк»</b></span>
+        <button class="reg__photo" data-gal="bmk25" aria-label="Фото объекта: БМК 25 МВт для ООО СамРэк, 9 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="bmk">
+        <span class="reg__mw">19,5 МВт</span>
+        <div><div class="reg__title">Блочно-модульная котельная</div><div class="reg__meta"><span class="reg__work">БМК под ключ</span></div></div>
+        <span class="reg__client"><b>АО «Электрощит Самара»</b></span>
+        <button class="reg__photo" data-gal="bmk195" aria-label="Фото объекта: БМК 19,5 МВт для АО Электрощит Самара, 12 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw">2,5 МВт</span>
+        <div><div class="reg__title">Демонтаж и монтаж двух котлов</div><div class="reg__meta"><span class="reg__work">демонтаж и монтаж</span></div></div>
+        <span class="reg__client">объект уточняется</span>
+        <button class="reg__photo" data-gal="dem" aria-label="Фото объекта: демонтаж и монтаж двух котлов 2,5 МВт, 6 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw">1,5 МВт</span>
+        <div><div class="reg__title">Монтаж котельного оборудования</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client"><b>санаторий «Колос»</b>, Кинель-Черкасский район</span>
+        <button class="reg__photo" data-gal="kolos" aria-label="Фото объекта: котельное оборудование санатория Колос, 14 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="bmk">
+        <span class="reg__mw">0,6 МВт</span>
+        <div><div class="reg__title">Блочно-модульная котельная 600 кВт</div><div class="reg__meta"><span class="reg__work">БМК</span></div></div>
+        <span class="reg__client"><b>с. Варламово</b></span>
+        <button class="reg__photo" data-gal="bmk600" aria-label="Фото объекта: БМК 600 кВт, село Варламово, 7 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="bmk">
+        <span class="reg__mw">0,6 МВт</span>
+        <div><div class="reg__title">БМК 600</div><div class="reg__meta"><span class="reg__work">БМК</span></div></div>
+        <span class="reg__client"><b>г. Чапаевск</b></span>
+        <button class="reg__photo" data-gal="bmk600ch" aria-label="Фото объекта: БМК 600, Чапаевск, 2 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">БМК парового и водогрейного режима</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client"><b>Самарский хлебозавод № 5</b></span>
+        <button class="reg__photo" data-gal="hleb" aria-label="Фото объекта: БМК Самарского хлебозавода № 5, 8 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Котёл паровой ДЕ 16/14, ПОР демонтажа дымовых труб</div><div class="reg__meta"><span class="reg__work">проект и монтаж</span></div></div>
+        <span class="reg__client"><b>АО «Тяжмаш»</b>, цех № 30</span>
+        <button class="reg__photo" data-gal="card" aria-label="Фото объекта: котёл ДЕ 16/14 на АО Тяжмаш, 2 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Газолучистые излучатели и тепловые вентустановки</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client"><b>ОАО «Металлист-Самара»</b></span>
+        <button class="reg__photo" data-gal="metal" aria-label="Фото объекта: излучатели и вентустановки на Металлист-Самара, 3 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Оборудование LAVART</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client"><b>г. Чапаевск</b></span>
+        <button class="reg__photo" data-gal="web" aria-label="Фото объекта: оборудование LAVART, Чапаевск, 2 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="bmk">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Котельная «Кинель-16»</div><div class="reg__meta"><span class="reg__work">котельная</span></div></div>
+        <span class="reg__client"><b>г. Кинель</b></span>
+        <button class="reg__photo" data-gal="kin" aria-label="Фото объекта: котельная Кинель-16, 2 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Монтажные работы, котельная № 1</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client"><b>г. Похвистнево</b></span>
+        <button class="reg__photo" data-gal="pohv" aria-label="Фото объекта: котельная № 1, Похвистнево, 5 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Свинокомплекс «Савруха»</div><div class="reg__meta"><span class="reg__work">—</span></div></div>
+        <span class="reg__client"><b>с. Савруха</b></span>
+        <button class="reg__photo" data-gal="svin" aria-label="Фото объекта: свинокомплекс Савруха, 2 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Горелка для зерносушилки</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client"><b>с. Савруха</b></span>
+        <button class="reg__photo" data-gal="savruha" aria-label="Фото объекта: горелка для зерносушилки, село Савруха, 5 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="postavka">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Модуль</div><div class="reg__meta"><span class="reg__work">изготовление и поставка</span></div></div>
+        <span class="reg__client"><b>ПАО «Самаранефтегеофизика»</b></span>
+        <button class="reg__photo" data-gal="app" aria-label="Фото объекта: модуль для Самаранефтегеофизика, 2 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Котёл ПТВМ 30 М</div><div class="reg__meta"><span class="reg__work">демонтаж и монтаж</span></div></div>
+        <span class="reg__client">—</span>
+        <button class="reg__photo" data-gal="ptvm" aria-label="Фото объекта: котёл ПТВМ 30 М, 8 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="postavka">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Дымосос и вентилятор для котла ПТВМ 30 М</div><div class="reg__meta"><span class="reg__work">поставка</span></div></div>
+        <span class="reg__client">—</span>
+        <button class="reg__photo" data-gal="ptvmvent" aria-label="Фото объекта: дымосос и вентилятор для ПТВМ 30 М, 4 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="montazh">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Газовый теплогенератор</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client">—</span>
+        <button class="reg__photo" data-gal="mon" aria-label="Фото объекта: монтаж газового теплогенератора, 3 фотографии"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="gaz">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Газопровод, ГРПШ и горелочное устройство</div><div class="reg__meta"><span class="reg__work">монтаж</span></div></div>
+        <span class="reg__client">—</span>
+        <button class="reg__photo" data-gal="grpsh" aria-label="Фото объекта: газопровод, ГРПШ и горелочное устройство, 5 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+      <li class="reg__row" data-cat="gaz">
+        <span class="reg__mw" aria-hidden="true">·</span>
+        <div><div class="reg__title">Котельная и газификация жилого дома</div><div class="reg__meta"><span class="reg__work">монтаж и газификация</span></div></div>
+        <span class="reg__client"><b>г. Безенчук</b></span>
+        <button class="reg__photo" data-gal="bez" aria-label="Фото объекта: котельная и газификация жилого дома, Безенчук, 5 фотографий"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L9 18"/></svg></button>
+      </li>
+    </ul>
+    <p class="reg__empty-note">Состав и названия объектов — по портфолио и благодарственным письмам компании. В галереях — 106 фотографий, открываются кнопкой в строке</p>
+  </div>
+</section>
+
+<!-- УСЛУГИ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Шесть направлений</h2>
+      <p>От изысканий до сервиса — одним подрядчиком</p>
+    </div>
+    <div class="services__grid">
+      <article class="srv">
+        <img src="assets/img/tabs-2.jpg" alt="Фото работ: проектный отдел" loading="lazy">
+        <div class="srv__body">
+          <span class="tag">01 · Проектирование</span>
+          <h3>Проектно-изыскательские работы</h3>
+          <p>Сбор данных по зданию, чертежи, эскизный проект, проектная документация и спецификации — от частных домов до промышленных объектов</p>
+        </div>
+      </article>
+      <article class="srv">
+        <img src="assets/img/tabs-4.jpg" alt="Фото работ: щит автоматики котельной" loading="lazy">
+        <div class="srv__body">
+          <span class="tag">02 · Автоматика</span>
+          <h3>Автоматизация</h3>
+          <p>Автоматизация котельных агрегатов и тепловых пунктов: сигнализация, защиты, блокировки, дистанционное управление и регулирование</p>
+        </div>
+      </article>
+      <article class="srv">
+        <img src="assets/img/tabs-1.jpg" alt="Фото работ: газовое оборудование" loading="lazy">
+        <div class="srv__body">
+          <span class="tag">03 · Газ</span>
+          <h3>Системы газоснабжения</h3>
+          <p>Строительство, перевооружение, капремонт и реконструкция газопроводов низкого, среднего и высокого давления. ГРП и ГРУ, узлы учёта газа, пуск и режимная наладка</p>
+        </div>
+      </article>
+      <article class="srv">
+        <img src="assets/img/tabs-3.jpg" alt="Фото работ: тепловые сети" loading="lazy">
+        <div class="srv__body">
+          <span class="tag">04 · Тепло</span>
+          <h3>Системы теплоснабжения</h3>
+          <p>Внутренние и наружные системы: отопление, вентиляция, кондиционирование, ГВС. Испытания, теплоизоляция, узлы учёта тепла</p>
+        </div>
+      </article>
+      <article class="srv">
+        <img src="assets/img/portfolio/grpsh1.jpg" alt="Фото работ: узел учёта газа с приборами" loading="lazy">
+        <div class="srv__body">
+          <span class="tag">05 · Расчёты</span>
+          <h3>Инженерные расчёты</h3>
+          <p>Гидравлический расчёт инженерных сетей, расчёт электрических нагрузок и системы заземления</p>
+        </div>
+      </article>
+      <article class="srv">
+        <img src="assets/img/tabs-6.jpg" alt="Фото работ: изготовление дымовых труб" loading="lazy">
+        <div class="srv__body">
+          <span class="tag">06 · Изготовление</span>
+          <h3>Изготовление</h3>
+          <p>Мачты для дымовых труб, утеплённые сэндвич-трубы</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ПРОЦЕСС -->
+<section class="process dark" id="process">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Что берём на себя</h2>
+      <p>Один подрядчик на всю цепочку — без стыков между организациями</p>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="tag">Шаг 01</span><h3>Проект и изыскания</h3><p>Сбор данных, предварительные чертежи, эскизный проект, проектная документация и спецификации</p></li>
+      <li class="step"><span class="tag">Шаг 02</span><h3>Экспертиза и согласования</h3><p>Государственная экспертиза проектной документации, согласование с Ростехнадзором</p></li>
+      <li class="step"><span class="tag">Шаг 03</span><h3>Монтаж и поставка</h3><p>Строительно-монтажные работы, поставка оборудования — официального, по партнёрским контрактам</p></li>
+      <li class="step"><span class="tag">Шаг 04</span><h3>Пуск и наладка</h3><p>Пусконаладочные и режимно-наладочные работы, автоматизация, ввод в эксплуатацию</p></li>
+      <li class="step"><span class="tag">Шаг 05</span><h3>Сервис</h3><p>Гарантийное и сервисное обслуживание, ремонт котельного и вспомогательного оборудования</p></li>
+    </ol>
+    <p class="process__note">Состав этапов — по описанию услуг компании</p>
+  </div>
+</section>
+
+<!-- ДОКУМЕНТЫ -->
+<section class="docs" id="docs">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Письма и благодарности</h2>
+      <p>Оригиналы писем заказчиков. Кнопка «Смотреть скан» открывает документ крупно</p>
+    </div>
+    <div class="letters">
+      <div class="letters__quote">
+        <p class="letters__text" id="ltText"></p>
+        <div class="letters__who">
+          <b id="ltRole"></b>
+          <span id="ltOrg"></span>
+        </div>
+        <div class="letters__acts">
+          <button class="btn btn--ghost-light letters__scanbtn" id="ltScan" data-gal="" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Смотреть скан
+          </button>
+          <a class="drow__pdf" id="ltPdf" href="#" target="_blank" rel="noopener" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
+            PDF
+          </a>
+        </div>
+      </div>
+      <div class="letters__tabs" role="tablist" aria-label="Письма заказчиков" id="ltTabs"></div>
+    </div>
+    <p class="reg__empty-note" style="margin-top:16px">Кнопка «Смотреть скан» открывает оригинал письма крупно</p>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Что говорят клиенты</h2>
+    </div>
+    <p class="reviews__note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/></svg>
+      Отзывы с Яндекс.Карт, ноябрь 2026 · карточка компании подтверждена владельцем · публикуем дословно
+    </p>
+    <div class="reviews__grid">
+      <article class="review">
+        <blockquote>«Ни дня не пожалела. Ребята грамотные, сами работали в газовой компании, все знают. Все разжуют понятно, за руку везде проведут»</blockquote>
+        <div class="review__who"><b>Лена С.</b><span>Яндекс.Карты · 14.10.2024</span></div>
+      </article>
+      <article class="review">
+        <blockquote>«Дружная, профессиональная команда, ребята специалисты своего дела. Благодарность Александру, Дмитрию и Михаилу, рекомендую к сотрудничеству»</blockquote>
+        <div class="review__who"><b>Денис И.</b><span>Яндекс.Карты · 05.02.2025</span></div>
+      </article>
+      <article class="review">
+        <blockquote>«Не дорого, быстро, чётко. 3 месяца и дом под газом»</blockquote>
+        <div class="review__who"><b>Дмитрий Мосягин</b><span>Яндекс.Карты · 24.02.2025</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- КОМАНДА -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Команда</h2>
+      <p>Инженеры, проектировщики и ПТО — те, с кем вы будете говорить и кто будет на объекте</p>
+    </div>
+    <div class="team__grid">
+      <div class="member"><img src="assets/img/team/team-1.jpg" alt="Гриценко Сергей Иванович, технический директор" loading="lazy"><div class="member__body"><b>Гриценко Сергей Иванович</b><span>Технический директор</span></div></div>
+      <div class="member"><img src="assets/img/team/team-2.jpg" alt="Гриценко Александр Сергеевич, управляющий" loading="lazy"><div class="member__body"><b>Гриценко Александр Сергеевич</b><span>Управляющий</span></div></div>
+      <div class="member"><img src="assets/img/team/team-3.jpg" alt="Гриценко Дмитрий Сергеевич, главный инженер" loading="lazy"><div class="member__body"><b>Гриценко Дмитрий Сергеевич</b><span>Главный инженер</span></div></div>
+      <div class="member"><img src="assets/img/team/team-4.jpg" alt="Старков Денис Павлович, главный инженер проекта" loading="lazy"><div class="member__body"><b>Старков Денис Павлович</b><span>Главный инженер проекта</span></div></div>
+      <div class="member"><img src="assets/img/team/team-5.jpg" alt="Фетисова Екатерина Алексеевна, начальник ПТО" loading="lazy"><div class="member__body"><b>Фетисова Екатерина Алексеевна</b><span>Начальник ПТО</span></div></div>
+      <div class="member"><img src="assets/img/team/team-6.jpg" alt="Глушенко Ольга Юрьевна, главный бухгалтер" loading="lazy"><div class="member__body"><b>Глушенко Ольга Юрьевна</b><span>Главный бухгалтер</span></div></div>
+      <div class="member"><img src="assets/img/team/team-7.jpg" alt="Кичемасов Михаил Сергеевич, начальник участка" loading="lazy"><div class="member__body"><b>Кичемасов Михаил Сергеевич</b><span>Начальник участка</span></div></div>
+      <div class="member"><img src="assets/img/team/team-8.jpg" alt="Кошелева Татьяна Николаевна, инженер ПТО" loading="lazy"><div class="member__body"><b>Кошелева Татьяна Николаевна</b><span>Инженер ПТО</span></div></div>
+      <div class="member"><img src="assets/img/team/team-9.jpg" alt="Солдаткина Ольга Михайловна, инженер-проектировщик" loading="lazy"><div class="member__body"><b>Солдаткина Ольга Михайловна</b><span>Инженер-проектировщик</span></div></div>
+      <div class="member"><img src="assets/img/team/team-10.jpg" alt="Терёшина Марина Сергеевна, инженер-проектировщик" loading="lazy"><div class="member__body"><b>Терёшина Марина Сергеевна</b><span>Инженер-проектировщик</span></div></div>
+      <div class="member"><img src="assets/img/team/team-11.jpg" alt="Маклашов Николай Александрович, инженер" loading="lazy"><div class="member__body"><b>Маклашов Николай Александрович</b><span>Инженер</span></div></div>
+      <div class="member"><img src="assets/img/team/team-12.jpg" alt="Сотрудники строительно-монтажного отдела" loading="lazy"><div class="member__body"><b>Сотрудники СМО</b><span>Строительно-монтажный отдел</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ПАРТНЁРЫ -->
+<section class="partners" id="partners">
+  <div class="container">
+    <div class="sec-head">
+      <span class="collector" aria-hidden="true"><i></i></span>
+      <h2>Партнёры</h2>
+      <p>Работаем на официальном оборудовании — с правами поставки, монтажа и сервиса</p>
+    </div>
+    <div class="partners__grid">
+      <article class="partner">
+        <span class="tag">Официальный дилер</span>
+        <h3>LAVART</h3>
+        <p>Поставки, монтаж, пусконаладочные и режимно-наладочные работы оборудования TM LAVART производства ЗАО «ОмЗИТ»</p>
+        <button class="partner__cert" data-gal="lavart">Сертификат<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </article>
+      <article class="partner">
+        <span class="tag">Официальный партнёр</span>
+        <h3>PikInno</h3>
+        <p>Права на продвижение, реализацию и обслуживание продукции TM «Pikinno» производства ООО «Кальдера»</p>
+        <button class="partner__cert" data-gal="pikin">Сертификат<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </article>
+      <article class="partner">
+        <span class="tag">Генеральный партнёр</span>
+        <h3>Рационал</h3>
+        <p>Производитель котельных и тепловых пунктов «Рационал»: проектные, монтажные, пусконаладочные работы, гарантийное и сервисное обслуживание</p>
+        <button class="partner__cert" data-gal="racional">Сертификат<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ФИНИСТ -->
+<section class="finist dark" id="finist">
+  <div class="container finist__grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="collector" aria-hidden="true"><i></i></span>
+        <h2>Поддержка детского спорта</h2>
+      </div>
+      <p>Компания поддерживает детский футбольный клуб «Финист» из Самары — это часть характера команды. Фото и видео клуба собраны на отдельной странице старого сайта и переедут сюда</p>
+    </div>
+    <div class="finist__photos">
+      <button data-gal="finist" aria-label="Фото ДФК «Финист», открыть галерею"><img src="assets/finist/foto1.jpg" alt="ДФК «Финист», фото 1" loading="lazy"></button>
+      <button data-gal="finist" aria-label="Фото ДФК «Финист», открыть галерею"><img src="assets/finist/foto3.jpg" alt="ДФК «Финист», фото 2" loading="lazy"></button>
+      <button data-gal="finist" aria-label="Фото ДФК «Финист», открыть галерею"><img src="assets/finist/foto5.jpg" alt="ДФК «Финист», фото 3" loading="lazy"></button>
+      <button data-gal="finist" aria-label="Фото ДФК «Финист», открыть галерею"><img src="assets/finist/foto7.jpg" alt="ДФК «Финист», фото 4" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section class="contacts" id="contacts">
+  <div class="container contacts__grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="collector" aria-hidden="true"><i></i></span>
+        <h2>Контакты</h2>
+      </div>
+      <p style="margin-top:24px;color:var(--ink-2)">Позвоните — созвонимся с инженером, обсудим задачу и приедем на обследование</p>
+      <a class="contact-phone" href="tel:+78462012576" style="margin-top:24px">+7 (846) 201-25-76</a>
+      <div class="contact-rows">
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Офис и база</b><span>443067, г. Самара, ул. Карбышева, д. 67</span></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><b>Часы работы</b><span>пн–пт 09:00–17:00</span></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <div><b>Почта</b><span><a href="mailto:teploservis2014@yandex.ru">teploservis2014@yandex.ru</a></span></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
+          <div><b>Реквизиты</b><span>ООО «Теплосервис» · ИНН 6316204386 · ОГРН 1146316010202</span></div>
+        </div>
+      </div>
+      <div class="contacts__cta">
+        <a class="btn btn--primary" href="tel:+78462012576">Позвонить</a>
+        <a class="btn btn--ghost-light" href="mailto:teploservis2014@yandex.ru">Написать на почту</a>
+      </div>
+      <p class="contacts__note">Стоимость — после обследования объекта или по вашему заданию. Форма заявки появится после подключения почтового бэкенда, сейчас — телефон и почта</p>
+    </div>
+    <div class="map-ph" role="img" aria-label="Схема расположения офиса: Самара, улица Карбышева, 67 (карта — заглушка)">
+      <span class="tag">заглушка</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <b>Самара, Советский район, ул. Карбышева, д. 67<br>карта подключается при публикации сайта</b>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ФУТЕР -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="#hero" class="header__logo" aria-label="Теплосервис, Самара — на главную">
+        <img src="logo/logo-192.png" alt="Логотип Теплосервис, Самара" style="height:96px" loading="lazy">
+      </a>
+      <nav class="footer__nav" aria-label="Навигация в футере">
+        <a href="#about">О компании</a>
+        <a href="#tasks">С чего начать</a>
+        <a href="#registry">Объекты</a>
+        <a href="#services">Услуги</a>
+        <a href="#docs">Письма</a>
+        <a href="#team">Команда</a>
+        <a href="#finist">Детский спорт</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="footer__req">
+        ООО «Теплосервис» · ИНН 6316204386 · ОГРН 1146316010202<br>
+        Самара, ул. Карбышева, 67 · +7 (846) 201-25-76<br>
+        teploservis2014@yandex.ru · пн–пт 09:00–17:00
+      </div>
+    </div>
+    <div class="footer__collector" aria-hidden="true"></div>
+    <div class="footer__bottom">
+      <span>© 2014–2026 ООО «Теплосервис», Самара</span>
+      <span>Демонстрационный макет, не является утверждённым проектом</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ЛАЙТБОКС -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+  <button class="lightbox__close" id="lbClose" aria-label="Закрыть просмотр">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Предыдущее фото">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Следующее фото">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+  <div class="lightbox__cap" id="lbCap"></div>
+  <div class="lightbox__counter" id="lbCount"></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var IMG = 'assets/img/';
+  var PF  = 'assets/img/portfolio/large/';
+
+  /* Галереи */
+  function seq(prefix, from, to){ var a=[]; for(var i=from;i<=to;i++) a.push({src:PF+prefix+i+'.webp', cap:prefix}); return a; }
+  var JP  = 'assets/img/portfolio/';
+  function jpg(prefix, from, to){ var a=[]; for(var i=from;i<=to;i++) a.push({src:JP+prefix+i+'.jpg', cap:prefix}); return a; }
+  function pick(){ var a=[]; for(var i=0;i<arguments.length;i++) a.push({src:JP+'portfolio-'+arguments[i]+'.jpg', cap:'portfolio'}); return a; }
+  var galleries = {
+    bmk25:    {list:seq('bmk25',1,9),       cap:'БМК 25 МВт — ООО «СамРэк»'},
+    bmk195:   {list:seq('bmk195',1,12),     cap:'БМК 19,5 МВт — АО «Электрощит Самара»'},
+    bmk600:   {list:seq('bmk600',1,7),      cap:'БМК 600 кВт — с. Варламово'},
+    kolos:    {list:seq('mon15kolos',1,14), cap:'Монтаж котельного оборудования 1,5 МВт — санаторий «Колос», Кинель-Черкасский район'},
+    savruha:  {list:seq('monsavruha',1,5),  cap:'Монтаж горелки зерносушилки — с. Савруха'},
+    bmk600ch: {list:jpg('bmk',1,2),         cap:'«БМК600» — г. Чапаевск'},
+    dem:      {list:jpg('dem',1,6),         cap:'Демонтаж и монтаж двух котлов 2,5 МВт'},
+    hleb:     {list:jpg('hleb',1,8),        cap:'БМК парового и водогрейного режима — Самарский хлебозавод № 5'},
+    metal:    {list:jpg('metal',1,3),       cap:'Газолучистые излучатели и тепловые вентустановки — ОАО «Металлист-Самара»'},
+    kin:      {list:jpg('kin',1,2),         cap:'Котельная «Кинель-16» — г. Кинель'},
+    pohv:     {list:jpg('pohv',1,5),        cap:'Монтажные работы, котельная № 1 — г. Похвистнево'},
+    svin:     {list:jpg('svin',1,2),        cap:'Свинокомплекс «Савруха»'},
+    ptvm:     {list:jpg('ptvm',1,8),        cap:'Котёл ПТВМ 30 М'},
+    ptvmvent: {list:jpg('ptvmvent',1,4),    cap:'Дымосос и вентилятор для котла ПТВМ 30 М'},
+    mon:      {list:jpg('mon',1,3),         cap:'Монтаж газового теплогенератора'},
+    grpsh:    {list:jpg('grpsh',1,5),       cap:'Газопровод, ГРПШ и горелочное устройство'},
+    bez:      {list:jpg('bez',1,5),         cap:'Котельная и газификация жилого дома — г. Безенчук'},
+    app:      {list:pick(1,6),              cap:'Модуль — ПАО «Самаранефтегеофизика»'},
+    card:     {list:pick(4,7),              cap:'АО «Тяжмаш», цех № 30 — котёл ДЕ 16/14, ПОР демонтажа дымовых труб'},
+    web:      {list:pick(2,9),              cap:'Оборудование LAVART — г. Чапаевск'},
+    sert:     {list:[{src:IMG+'sert.jpg',cap:''}], cap:'Сертификат «Лучшее предприятие отрасли 2025» — рейтинг надёжных партнёров России, категория AAA, № УОООО336785, ОКВЭД 35.30.4'},
+    'letter-zhiro':    {list:[{src:IMG+'testimonials/testimonials-1.jpg',cap:''}], cap:'Письмо АО «Самарский жиркомбинат», главный инженер А. В. Солоимов'},
+    'letter-tyazhmash':{list:[{src:IMG+'testimonials/testimonials-2.jpg',cap:''}], cap:'Письмо АО «Тяжмаш» — котёл ДЕ 16/14, ПОР демонтажа дымовых труб'},
+    'letter-metal':    {list:[{src:IMG+'testimonials/testimonials-3.jpg',cap:''}], cap:'Письмо ОАО «Металлист-Самара»'},
+    'letter-sngeo':    {list:[{src:IMG+'testimonials/testimonials-4.png',cap:''}], cap:'Письмо ПАО «Самаранефтегеофизика», подписал главный энергетик А. А. Тракнов'},
+    lavart:   {list:[{src:IMG+'lavart.jpg',cap:''}],    cap:'Сертификат официального дилера LAVART — ЗАО «ОмЗИТ»'},
+    pikin:    {list:[{src:IMG+'pikin.jpg',cap:''}],     cap:'Сертификат официального партнёра Pikinno — ООО «Кальдера»'},
+    racional: {list:[{src:IMG+'racional2.bmp',cap:''}], cap:'Сертификат генерального партнёра — производитель котельных «Рационал»'},
+    finist:   {list:[{src:'assets/finist/foto1.jpg',cap:''},{src:'assets/finist/foto3.jpg',cap:''},{src:'assets/finist/foto5.jpg',cap:''},{src:'assets/finist/foto7.jpg',cap:''}], cap:'ДФК «Финист» — детский футбольный клуб'}
+  };
+  Object.keys(galleries).forEach(function(k){ galleries[k].name = galleries[k].cap; });
+
+  /* Шапка */
+  var header = document.getElementById('header');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* Мобильное меню */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  function setMenu(open){
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    if(open){ menu.hidden = false; } else { setTimeout(function(){ menu.hidden = true; }, 200); }
+  }
+  burger.addEventListener('click', function(){ setMenu(!document.body.classList.contains('menu-open')); });
+  menu.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+
+  /* Звук видео */
+  var video = document.getElementById('heroVideo');
+  var sound = document.getElementById('soundToggle');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion && video){ video.removeAttribute('autoplay'); }
+  sound.addEventListener('click', function(){
+    video.muted = !video.muted;
+    if(!video.muted && video.paused){ video.play(); }
+    sound.classList.toggle('muted', video.muted);
+    sound.setAttribute('aria-pressed', String(!video.muted));
+    sound.setAttribute('aria-label', video.muted ? 'Включить звук видео' : 'Выключить звук видео');
+  });
+
+  /* Письма: переключатель цитат */
+  var IMGROOT = 'assets/img/';
+  var LETTERS = [
+    {name:'АО «Самарский жиркомбинат»', role:'Главный инженер — А. В. Солоимов', org:'АО «Самарский жиркомбинат»',
+     text:'Благодарим организацию ООО «Теплосервис» за качественное и добросовестное выполнение проектных, строительно-монтажных и пусконаладочных работ на территории предприятия АО «Самарский жиркомбинат».',
+     gal:'letter-zhiro', pdf:IMGROOT+'zhiro.pdf'},
+    {name:'АО «УФСИН по Самарской области»', role:'Заместитель начальника, майор внутренней службы — Б. П. Карпов', org:'ФКЛПУ ОСБ УФСИН России по Самарской области',
+     text:'ФКЛПУ ОСБ УФСИН России по Самарской области выражает огромную благодарность и признательность ООО «Теплосервис» и Вашей команде специалистов за качественное и добросовестное выполнение строительно-монтажных работ и поставку парового котла Е-1,0-0,9Г-3 в котельную, за эффективное сотрудничество, плодотворную и эффективную работу.',
+     gal:null, pdf:IMGROOT+'ufsin.pdf'},
+    {name:'АО «Тяжмаш»', role:'АО «Тяжмаш»', org:'Цех № 30',
+     text:'Выражаю благодарность ООО «Теплосервис» за качественное и добросовестное выполнение проектных, строительно-монтажных и пусконаладочных работ на территории предприятия АО «Тяжмаш», в частности: проектирование и монтаж парового котла ДЕ 16/14, разработка ПОР на демонтаж дымовых труб.',
+     gal:'letter-tyazhmash', pdf:null},
+    {name:'ОАО «Металлист-Самара»', role:'ОАО «Металлист-Самара»', org:'',
+     text:'Благодарим организацию ООО «Теплосервис» за качественное и добросовестное выполнение проектных, строительно-монтажных работ на территории предприятия ОАО «Металлист-Самара».',
+     gal:'letter-metal', pdf:null},
+    {name:'ПАО «Самаранефтегеофизика»', role:'Главный энергетик — А. А. Тракнов', org:'ПАО «Самаранефтегеофизика»',
+     text:'Публичное акционерное общество «Самаранефтегеофизика» выражает огромную благодарность и признательность от лица всего коллектива за вашу качественную и профессиональную работу.',
+     gal:'letter-sngeo', pdf:IMGROOT+'sngeo.pdf'}
+  ];
+  (function(){
+    var tabsBox = document.getElementById('ltTabs');
+    var elText = document.getElementById('ltText');
+    var elRole = document.getElementById('ltRole');
+    var elOrg = document.getElementById('ltOrg');
+    var elScan = document.getElementById('ltScan');
+    var elPdf = document.getElementById('ltPdf');
+    LETTERS.forEach(function(L, i){
+      var b = document.createElement('button');
+      b.className = 'ltab'; b.setAttribute('role','tab'); b.type = 'button';
+      b.textContent = L.name;
+      b.addEventListener('click', function(){ show(i); });
+      tabsBox.appendChild(b);
+    });
+    var tabs = tabsBox.querySelectorAll('.ltab');
+    function show(i){
+      var L = LETTERS[i];
+      elText.textContent = L.text;
+      elRole.textContent = L.role;
+      elOrg.textContent = L.org; elOrg.hidden = !L.org;
+      if(L.gal){ elScan.hidden = false; elScan.setAttribute('data-gal', L.gal); }
+      else { elScan.hidden = true; elScan.removeAttribute('data-gal'); }
+      if(L.pdf){ elPdf.hidden = false; elPdf.setAttribute('href', L.pdf); }
+      else { elPdf.hidden = true; elPdf.removeAttribute('href'); }
+      tabs.forEach(function(t, j){ t.setAttribute('aria-selected', String(j === i)); });
+    }
+    show(0);
+  })();
+
+  /* Фильтр реестра */
+  var chips = document.querySelectorAll('.chip');
+  var rows = document.querySelectorAll('.reg__row');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      var f = chip.getAttribute('data-f');
+      rows.forEach(function(r){
+        r.classList.toggle('reg__hidden', f !== 'all' && r.getAttribute('data-cat') !== f);
+      });
+    });
+  });
+
+  /* Лайтбокс */
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
+  var lbCount = document.getElementById('lbCount');
+  var lbPrev = document.getElementById('lbPrev');
+  var lbNext = document.getElementById('lbNext');
+  var lbClose = document.getElementById('lbClose');
+  var cur = null, idx = 0, lastFocus = null;
+
+  function show(){
+    var g = galleries[cur], item = g.list[idx];
+    lbImg.src = item.src;
+    lbImg.alt = (g.cap ? g.cap + ' — ' : '') + 'фото ' + (idx+1) + ' из ' + g.list.length;
+    lbCap.textContent = g.cap;
+    lbCount.textContent = g.list.length > 1 ? (idx+1) + ' / ' + g.list.length : '';
+    lbPrev.hidden = g.list.length < 2;
+    lbNext.hidden = g.list.length < 2;
+  }
+  function open(gal, i){
+    if(!galleries[gal]) return;
+    cur = gal; idx = i || 0;
+    lastFocus = document.activeElement;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    show(); lbClose.focus();
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+    if(lastFocus) lastFocus.focus();
+  }
+  function move(d){ if(!cur) return; var n = galleries[cur].list.length; idx = (idx + d + n) % n; show(); }
+
+  document.querySelectorAll('[data-gal]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      open(el.getAttribute('data-gal'));
+    });
+  });
+  lbClose.addEventListener('click', close);
+  lbPrev.addEventListener('click', function(){ move(-1); });
+  lbNext.addEventListener('click', function(){ move(1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(lb.classList.contains('open')) close();
+      else if(document.body.classList.contains('menu-open')) setMenu(false);
+    }
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'ArrowLeft') move(-1);
+    if(e.key === 'ArrowRight') move(1);
+  });
+})();
+</script>
+</body>
+</html>
